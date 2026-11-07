@@ -1,0 +1,36 @@
+title: Idee poco intelligenti e molto artificiali
+base_url: /idee-artificiali
+author: Andrea Marcellusi
+lede: >-
+  Un economista sanitario, qualche modello linguistico e il mercato farmaceutico
+  italiano. Le fonti sono vere, i numeri verificati, le conclusioni discutibili
+  per costruzione. Questo è l'archivio, in attesa di diventare un libro.
+prompts:
+  - "analizza il mercato farmaceutico italiano. sii onesto, non gentile."
+  - "spiega perché i tetti di spesa si sforano ogni anno. in 300 parole, senza colpevoli."
+  - "confronta i tempi di accesso ai farmaci in Italia, Francia e Spagna. cita solo fonti vere."
+  - "scrivi un libro sulla politica farmaceutica. io controllo i numeri."
+ticker:
+  - "I modelli producono numeri. Le decisioni, purtroppo, non si prendono da sole."
+  - "Una risposta più veloce non è necessariamente una risposta più verificabile."
+  - "Il risultato conta. Le assunzioni che lo producono, spesso, di più."
+  - "Le definizioni si possono imparare. Il metodo richiede un po' più di lavoro."
+  - "Nessuna di queste idee è stata sottoposta a revisione tra pari. Alcune a revisione tra modelli."
+temi:
+  spesa: Spesa e sostenibilità
+  accesso: Accesso e HTA
+  oncologia: Innovazione e oncologia
+  ai: AI e metodi
+  formazione: Formazione
+nav:
+  - [Le idee, /]
+  - [I ripensamenti, /ripensamenti/]
+  - [I numeri, /numeri/]
+  - [Le voci, /voci/]
+ricerca_seria: https://ddrug.unimi.it/andrea-marcellusi/
+heta_lab: https://ddrug.unimi.it/research/health-economics-and-technology-assessment-heta-lab/
+footer_big: Le opinioni sono mie. Gli errori anche. Il resto è artificiale.
+footer: >-
+  Andrea Marcellusi, con l'aiuto di alcuni modelli linguistici che non hanno
+  chiesto di essere citati. Sito personale, non istituzionale. Contenuti
+  CC BY 4.0 salvo diversa indicazione.

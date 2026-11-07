@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block body %}
+<section class="paper"><div class="wrap">
+  <a class="back" href="{{ base }}/">← Tutte le idee</a>
+  <div class="scheda">
+   <article>
+    <div class="kicker">Idea n. {{ '%02d' % p.n }} · {% for t in p.temi %}{{ site.temi[t] }}{% if not loop.last %} · {% endif %}{% endfor %}</div>
+    <h1>{{ p.title }}</h1>
+    <p class="note">Pubblicata il {{ p.date_it }} su LinkedIn · {{ site.author }} &nbsp; <span class="stamp">Non è ricerca. È un'idea.</span></p>
+
+    <h2>Il testo</h2>
+    {% if p.testo == 'da importare' %}
+      <div class="post pending"><p>Il testo pubblicato è in arrivo dall'archivio LinkedIn. Nel frattempo c'è il post originale, che resta la versione di riferimento.</p><p><a class="btn" href="{{ p.linkedin }}" target="_blank" rel="noopener">Leggi su LinkedIn ↗</a></p></div>
+    {% else %}
+      <div class="post">{{ p.body_html|safe }}</div>
+    {% endif %}
+
+    {% if p.allegato == 'carosello' %}
+    <h2>Il carosello <span class="note">{{ p.pages|length }} pagine</span></h2>
+    <div class="strip" tabindex="0" aria-label="Carosello, scorri in orizzontale">
+      {% for img in p.pages %}<figure><img src="{{ base }}/assets/caroselli/{{ p.carosello }}/{{ img }}" alt="{{ p.title }}, pagina {{ loop.index }}" loading="lazy"><figcaption>{{ loop.index }}/{{ p.pages|length }}</figcaption></figure>{% endfor %}
+    </div>
+    <p class="note"><a class="btn sec" href="{{ base }}/assets/caroselli/{{ p.carosello }}.pdf">Scarica il PDF</a></p>
+    {% elif p.allegato == 'immagine' %}
+    <h2>L'immagine</h2>
+    <figure class="single"><img src="{{ base }}/assets/immagini/{{ p.immagine }}" alt="{{ p.title }}, infografica" loading="lazy"></figure>
+    {% elif p.allegato == 'video' %}
+    <h2>Il video</h2>
+    <p class="note">Il video è visibile sul post originale.</p>
+    {% else %}
+    <h2>L'allegato</h2>
+    <p class="note">Questa idea non aveva allegato.</p>
+    {% endif %}
+
+    <h2>Le fonti</h2>
+    {% if p.fonti %}<ul class="fonti">{% for f in p.fonti %}<li>{% if f.url %}<a href="{{ f.url }}">{{ f.titolo }}</a>{% else %}{{ f.titolo }}{% endif %}{% if f.nota %} · {{ f.nota }}{% endif %}</li>{% endfor %}</ul>
+    {% else %}<p class="note">Fonti primarie in compilazione. Nel post originale sono citate in coda.</p>{% endif %}
+   </article>
+   <aside class="side">
+    <div class="box"><h4>Scheda</h4><dl>
+      <dt>Data post</dt><dd>{{ p.date_it }}</dd>
+      <dt>Data dati</dt><dd>{{ p.data_dati }}</dd>
+      <dt>Allegato</dt><dd>{{ p.allegato_label }}</dd>
+      <dt>Stato</dt><dd>{{ p.stato }}</dd>
+      <dt>Versione</dt><dd>{{ p.versione }}</dd>
+      <dt>Scritto da</dt><dd>{{ p.scritto_da or 'umano e AI, quota in stima' }}</dd>
+    </dl></div>
+    <div class="box"><h4>Collegamenti</h4>
+      <p><a class="btn" href="{{ p.linkedin }}" target="_blank" rel="noopener">Apri su LinkedIn ↗</a></p>
+      {% if p.ripensamento %}<p><a class="btn sec" href="{{ base }}{{ p.ripensamento }}">Il ripensamento</a></p>{% else %}<p class="note">Ripensamento non ancora scritto.</p>{% endif %}
+    </div>
+    <div class="box"><h4>I numeri</h4>{% if p.dataset %}<p><a href="{{ base }}{{ p.dataset }}">Dataset</a></p>{% else %}<p class="note">Nessun dataset associato, oppure dati non ridistribuibili.</p>{% endif %}</div>
+    <div class="box"><h4>Come citare, se proprio</h4><p class="note">{{ site.author }} ({{ p.date[:4] }}). {{ p.title }}. In: {{ site.title }}, n. {{ '%02d' % p.n }}. {{ site_url }}/idee/{{ p.slug }}/</p></div>
+    {% if p.prev or p.next %}<div class="box nav2">{% if p.prev %}<a href="{{ base }}/idee/{{ p.prev.slug }}/">← {{ '%02d' % p.prev.n }}</a>{% endif %}{% if p.next %}<a href="{{ base }}/idee/{{ p.next.slug }}/">{{ '%02d' % p.next.n }} →</a>{% endif %}</div>{% endif %}
+   </aside>
+  </div>
+</div></section>
+{% endblock %}

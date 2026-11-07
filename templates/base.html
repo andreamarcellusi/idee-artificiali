@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page_title %}{{ page_title }} · {% endif %}{{ site.title }}</title>
+<meta name="description" content="{{ description or site.lede }}">
+<link rel="icon" href="{{ base }}/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500;1,9..144,700&family=JetBrains+Mono:wght@400;600&family=Carlito:wght@400;700&display=swap">
+<link rel="stylesheet" href="{{ base }}/style.css">
+{% if og_image %}<meta property="og:image" content="{{ og_image }}">{% endif %}
+<meta property="og:title" content="{{ page_title or site.title }}">
+<meta property="og:description" content="{{ description or site.lede }}">
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <a class="brand" href="{{ base }}/">idee <b>poco</b> intelligenti <span class="sep">/</span> <b>molto</b> artificiali</a>
+  <nav>
+    {% for label, href in site.nav %}<a href="{{ base }}{{ href }}"{% if href == current %} class="on"{% endif %}>{{ label }}</a>{% endfor %}
+    <a class="ext" href="{{ site.ricerca_seria }}" target="_blank" rel="noopener">La ricerca seria ↗</a>
+  </nav>
+</div></header>
+{% block body %}{% endblock %}
+<footer><div class="wrap">
+  <div class="big">{{ site.footer_big }}</div>
+  <p>{{ site.footer }} La ricerca sottoposta a revisione sta altrove: <a href="{{ site.heta_lab }}">HETA Lab, Università degli Studi di Milano</a>.</p>
+  <p class="tiny">Ultimo aggiornamento {{ build_date }} · <a href="{{ base }}/istruzioni/">Istruzioni per l'uso</a></p>
+</div></footer>
+</body>
+</html>
