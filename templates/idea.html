@@ -51,6 +51,13 @@
       <p><a class="btn" href="{{ p.linkedin }}" target="_blank" rel="noopener">Apri su LinkedIn ↗</a></p>
       {% if p.ripensamento %}<p><a class="btn sec" href="{{ base }}{{ p.ripensamento }}">Il ripensamento</a></p>{% else %}<p class="note">Ripensamento non ancora scritto.</p>{% endif %}
     </div>
+    <div class="box"><h4>Hai un dato migliore?</h4>
+      <p class="note">Errori, fonti migliori, obiezioni di metodo: le leggo tutte. Le correzioni accolte finiscono nel registro qui sotto, con il nome di chi le ha segnalate se lo desidera.</p>
+      {% if site.feedback and site.feedback.url %}<p><a class="btn sec" href="{{ site.feedback.url }}?usp=pp_url&amp;entry.{{ site.feedback.campo_idea }}={{ ('%02d · ' % p.n ~ p.title ~ ' · ' ~ site_url ~ '/idee/' ~ p.slug ~ '/')|urlencode }}" target="_blank" rel="noopener">Segnala ↗</a></p>{% else %}<p class="note">Il modulo arriva a breve.</p>{% endif %}
+    </div>
+    <div class="box"><h4>Registro delle correzioni</h4>
+      {% if p.correzioni %}<ul class="reg-corr">{% for c in p.correzioni %}<li><b>v{{ c.versione }} · {{ c.data }}</b> {{ c.testo }}{% if c.grazie %} <span class="note">Segnalazione di {{ c.grazie }}.</span>{% endif %}</li>{% endfor %}</ul>{% else %}<p class="note">Nessuna correzione, per ora. Non è detto che sia un buon segno.</p>{% endif %}
+    </div>
     <div class="box"><h4>I numeri</h4>{% if p.dataset %}<p><a href="{{ base }}{{ p.dataset }}">Dataset</a></p>{% else %}<p class="note">Nessun dataset associato, oppure dati non ridistribuibili.</p>{% endif %}</div>
     <div class="box"><h4>Come citare, se proprio</h4><p class="note">{{ site.author }} ({{ p.date[:4] }}). {{ p.title }}. In: {{ site.title }}, n. {{ '%02d' % p.n }}. {{ site_url }}/idee/{{ p.slug }}/</p></div>
     {% if p.prev or p.next %}<div class="box nav2">{% if p.prev %}<a href="{{ base }}/idee/{{ p.prev.slug }}/">← {{ '%02d' % p.prev.n }}</a>{% endif %}{% if p.next %}<a href="{{ base }}/idee/{{ p.next.slug }}/">{{ '%02d' % p.next.n }} →</a>{% endif %}</div>{% endif %}

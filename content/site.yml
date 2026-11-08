@@ -43,3 +43,10 @@ tema_colors:
   oncologia: "#b07fd0"
   ai: "#4fb59b"
   formazione: "#c9b26b"
+
+# Modulo per osservazioni sui dati (Google Form).
+# url: link "viewform" del modulo; campo_idea: numero entry del campo "Idea" (dal link precompilato).
+# Finché url è vuoto, il pulsante non compare.
+feedback:
+  url: ""
+  campo_idea: ""
