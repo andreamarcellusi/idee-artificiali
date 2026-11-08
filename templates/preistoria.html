@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block body %}
+<section class="paper"><div class="wrap">
+  <a class="back" href="{{ base }}/idee/">← Le idee</a>
+  <div class="sec-h"><h2>La preistoria</h2><p>Le idee di quando il metodo era lo stesso ma gli strumenti no.</p></div>
+  <p class="lede-p">Post pubblicati tra il 2020 e il 2024, prima che le idee prendessero la forma di adesso: un dato, un confronto, una proposta. Scritti a mano, con fogli Excel e tempi da tesista. Li tengo qui per completezza e per misurare la distanza.</p>
+  <div class="reg">
+  {% for p in idee %}
+    <a class="row" href="{{ base }}/preistoria/{{ p.slug }}/">
+      <div class="n">{{ p.code }}</div>
+      <div><h3>{{ p.title }}</h3><p>{{ p.summary }}</p></div>
+      <div class="r"><span>{{ p.date_it }}</span><span>{{ p.allegato_label }}</span>
+        <span>{% for t in p.temi %}<span class="tag">{{ site.temi[t] }}</span> {% endfor %}</span></div>
+    </a>
+  {% endfor %}
+  </div>
+</div></section>
+{% endblock %}

@@ -59,30 +59,35 @@ def main():
     env = Environment(loader=FileSystemLoader(TEMPLATES), autoescape=select_autoescape(["html"]))
     env.globals.update(site=site, base=base, site_url=site_url, build_date=date_it(dt.date.today()))
 
-    # Idee
-    idee = []
-    for path in sorted((CONTENT / "idee").glob("*.md")):
-        p = read_md(path)
-        if p.get("bozza"):
-            continue  # non pubblicata finché bozza: true
-        p["slug"] = re.sub(r"^\d+-", "", path.stem)
-        p["date_it"] = date_it(p["date"])
-        p["allegato_label"] = ALLEGATI.get(p.get("allegato", "nessuno"), p.get("allegato"))
-        if p.get("allegato", "nessuno") == "nessuno" and p.get("allegato_linkedin"):
-            p["allegato_label"] = f'{p["allegato_linkedin"]} su LinkedIn, qui non ancora'
-        if p.get("allegato") == "immagine" and not (ASSETS / "immagini" / p["immagine"]).exists():
-            raise SystemExit(f"{path}: immagine '{p['immagine']}' assente in assets/immagini/")
-        if p.get("testo") != "da importare" and p["body_raw"]:
-            p["testo"] = "importato"
-            p["body_html"] = linkedin_html(p["body_raw"])
-        if p.get("allegato") == "carosello":
-            pages = sorted((ASSETS / "caroselli" / p["carosello"]).glob("p-*.jpg"))
-            if not pages:
-                raise SystemExit(f"{path}: carosello '{p['carosello']}' senza pagine in assets/caroselli/")
-            p["pages"] = [x.name for x in pages]
-            p["allegato_label"] = f"carosello · {len(pages)} pagine"
-        idee.append(p)
-    for p in idee:
+    def carica(cartella, sezione, tipo, code):
+      out = []
+      for path in sorted((CONTENT / cartella).glob("*.md")):
+          p = read_md(path)
+          if p.get("bozza"):
+              continue  # non pubblicata finché bozza: true
+          p["slug"] = re.sub(r"^\d+-", "", path.stem)
+          p["date_it"] = date_it(p["date"])
+          p["allegato_label"] = ALLEGATI.get(p.get("allegato", "nessuno"), p.get("allegato"))
+          if p.get("allegato", "nessuno") == "nessuno" and p.get("allegato_linkedin"):
+              p["allegato_label"] = f'{p["allegato_linkedin"]} su LinkedIn, qui non ancora'
+          if p.get("allegato") == "immagine" and not (ASSETS / "immagini" / p["immagine"]).exists():
+              raise SystemExit(f"{path}: immagine '{p['immagine']}' assente in assets/immagini/")
+          if p.get("testo") != "da importare" and p["body_raw"]:
+              p["testo"] = "importato"
+              p["body_html"] = linkedin_html(p["body_raw"])
+          if p.get("allegato") == "carosello":
+              pages = sorted((ASSETS / "caroselli" / p["carosello"]).glob("p-*.jpg"))
+              if not pages:
+                  raise SystemExit(f"{path}: carosello '{p['carosello']}' senza pagine in assets/caroselli/")
+              p["pages"] = [x.name for x in pages]
+              p["allegato_label"] = f"carosello · {len(pages)} pagine"
+          p["sezione"], p["tipo"], p["code"] = sezione, tipo, code(p["n"])
+          out.append(p)
+      return out
+
+    idee = carica("idee", "idee", "Idea", lambda n: f"{n:02d}")
+    preistoria = carica("preistoria", "preistoria", "Preistoria", lambda n: f"P{n}")
+    for p in idee + preistoria:
         fonti = " ".join(f.get("titolo", "") for f in (p.get("fonti") or []))
         p["search_text"] = re.sub(r"\s+", " ", f'{p["title"]} {p["summary"]} {p["body_raw"]} {fonti} {" ".join(site["temi"][t] for t in p["temi"])}')
     idee.sort(key=lambda x: (str(x["date"]), x["n"]), reverse=True)
@@ -112,6 +117,11 @@ def main():
         p["next"] = idee[i - 1] if i > 0 else None       # più recente
         p["prev"] = idee[i + 1] if i + 1 < len(idee) else None  # più vecchia
 
+    preistoria.sort(key=lambda x: (str(x["date"]), x["n"]), reverse=True)
+    for i, p in enumerate(preistoria):
+        p["next"] = preistoria[i - 1] if i > 0 else None
+        p["prev"] = preistoria[i + 1] if i + 1 < len(preistoria) else None
+
     # Output
     if OUT.exists():
         shutil.rmtree(OUT)
@@ -130,8 +140,10 @@ def main():
     (OUT / "idee").mkdir(exist_ok=True)
     (OUT / "idee" / "index.html").write_text(env.get_template("idee.html").render(idee=idee, page_title="Le idee", current="/idee/"), encoding="utf-8")
 
-    for p in idee:
-        d = OUT / "idee" / p["slug"]
+    (OUT / "preistoria").mkdir()
+    (OUT / "preistoria" / "index.html").write_text(env.get_template("preistoria.html").render(idee=preistoria, page_title="La preistoria", current="/idee/"), encoding="utf-8")
+    for p in idee + preistoria:
+        d = OUT / p["sezione"] / p["slug"]
         d.mkdir(parents=True)
         og = None
         if p.get("allegato") == "carosello":
@@ -150,7 +162,7 @@ def main():
             env.get_template("section.html").render(s=s, page_title=s["title"], description=s.get("intro"), current=f"/{name}/"),
             encoding="utf-8")
 
-    print(f"ok: {len(idee)} idee, {n_car} caroselli -> {OUT}")
+    print(f"ok: {len(idee)} idee, {len(preistoria)} preistoria, {n_car} caroselli -> {OUT}")
 
 
 if __name__ == "__main__":

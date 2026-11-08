@@ -184,3 +184,6 @@ footer .tiny{font-family:var(--mono);font-size:12px}
 .ultime .sec-h p a{color:var(--ink);font-size:15px}
 
 .reg-corr{margin:0;padding-left:18px;font-size:14px}.reg-corr li{margin-bottom:6px}
+
+.lede-p{max-width:68ch;margin:0 0 28px;color:var(--muted,#5a6378)}
+.more-pre{margin-top:28px;font-weight:600}

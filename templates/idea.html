@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% block body %}
 <section class="paper"><div class="wrap">
-  <a class="back" href="{{ base }}/">← Tutte le idee</a>
+  <a class="back" href="{{ base }}/{{ p.sezione }}/">← {{ 'Tutte le idee' if p.sezione == 'idee' else 'Tutta la preistoria' }}</a>
   <div class="scheda">
    <article>
-    <div class="kicker">Idea n. {{ '%02d' % p.n }} · {% for t in p.temi %}{{ site.temi[t] }}{% if not loop.last %} · {% endif %}{% endfor %}</div>
+    <div class="kicker">{{ p.tipo }} n. {{ p.code }} · {% for t in p.temi %}{{ site.temi[t] }}{% if not loop.last %} · {% endif %}{% endfor %}</div>
     <h1>{{ p.title }}</h1>
     <p class="note">Pubblicata il {{ p.date_it }} su LinkedIn · {{ site.author }} &nbsp; <span class="stamp">Non è ricerca. È un'idea.</span></p>
 
@@ -56,14 +56,14 @@
     </div>
     <div class="box"><h4>Hai un dato migliore?</h4>
       <p class="note">Errori, fonti migliori, obiezioni di metodo: le leggo tutte. Le correzioni accolte finiscono nel registro qui sotto, con il nome di chi le ha segnalate se lo desidera.</p>
-      {% if site.feedback and site.feedback.url %}<p><a class="btn sec" href="{{ site.feedback.url }}?usp=pp_url&amp;entry.{{ site.feedback.campo_idea }}={{ ('%02d · ' % p.n ~ p.title ~ ' · ' ~ site_url ~ '/idee/' ~ p.slug ~ '/')|urlencode }}" target="_blank" rel="noopener">Segnala ↗</a></p>{% else %}<p class="note">Il modulo arriva a breve.</p>{% endif %}
+      {% if site.feedback and site.feedback.url %}<p><a class="btn sec" href="{{ site.feedback.url }}?usp=pp_url&amp;entry.{{ site.feedback.campo_idea }}={{ (p.code ~ ' · ' ~ p.title ~ ' · ' ~ site_url ~ '/' ~ p.sezione ~ '/' ~ p.slug ~ '/')|urlencode }}" target="_blank" rel="noopener">Segnala ↗</a></p>{% else %}<p class="note">Il modulo arriva a breve.</p>{% endif %}
     </div>
     <div class="box"><h4>Registro delle correzioni</h4>
       {% if p.correzioni %}<ul class="reg-corr">{% for c in p.correzioni %}<li><b>v{{ c.versione }} · {{ c.data }}</b> {{ c.testo }}{% if c.grazie %} <span class="note">Segnalazione di {{ c.grazie }}.</span>{% endif %}</li>{% endfor %}</ul>{% else %}<p class="note">Nessuna correzione, per ora. Non è detto che sia un buon segno.</p>{% endif %}
     </div>
     <div class="box"><h4>I numeri</h4>{% if p.dataset %}<p><a href="{{ base }}{{ p.dataset }}">Dataset</a></p>{% else %}<p class="note">Nessun dataset associato, oppure dati non ridistribuibili.</p>{% endif %}</div>
-    <div class="box"><h4>Come citare, se proprio</h4><p class="note">{{ site.author }} ({{ p.date[:4] }}). {{ p.title }}. In: {{ site.title }}, n. {{ '%02d' % p.n }}. {{ site_url }}/idee/{{ p.slug }}/</p></div>
-    {% if p.prev or p.next %}<div class="box nav2">{% if p.prev %}<a href="{{ base }}/idee/{{ p.prev.slug }}/">← {{ '%02d' % p.prev.n }}</a>{% endif %}{% if p.next %}<a href="{{ base }}/idee/{{ p.next.slug }}/">{{ '%02d' % p.next.n }} →</a>{% endif %}</div>{% endif %}
+    <div class="box"><h4>Come citare, se proprio</h4><p class="note">{{ site.author }} ({{ p.date[:4] }}). {{ p.title }}. In: {{ site.title }}, n. {{ p.code }}. {{ site_url }}/{{ p.sezione }}/{{ p.slug }}/</p></div>
+    {% if p.prev or p.next %}<div class="box nav2">{% if p.prev %}<a href="{{ base }}/{{ p.sezione }}/{{ p.prev.slug }}/">← {{ p.prev.code }}</a>{% endif %}{% if p.next %}<a href="{{ base }}/{{ p.sezione }}/{{ p.next.slug }}/">{{ p.next.code }} →</a>{% endif %}</div>{% endif %}
    </aside>
   </div>
 </div></section>
