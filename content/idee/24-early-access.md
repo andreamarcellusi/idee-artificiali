@@ -1,5 +1,5 @@
 ---
-n: 26
+n: 24
 title: 'Early access: Italia a confronto con Francia e Spagna'
 date: '2026-11-03'
 summary: Quanto tempo passa tra l'autorizzazione europea e la disponibilità effettiva del farmaco, e cosa cambia con un accesso anticipato.

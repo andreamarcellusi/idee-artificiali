@@ -1,5 +1,5 @@
 ---
-n: 23
+n: 21
 title: Tetti basati su previsioni trasparenti
 date: '2026-10-19'
 summary: 'Una proposta: fissare i tetti a partire da una previsione di spesa pubblica e verificabile.'

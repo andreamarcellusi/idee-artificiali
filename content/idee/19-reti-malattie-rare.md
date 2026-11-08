@@ -1,5 +1,5 @@
 ---
-n: 21
+n: 19
 title: Le reti regionali per le malattie rare
 date: '2026-10-06'
 summary: 46 atti regionali, 737 centri, tre modelli organizzativi. Solo 22 centri sono territoriali.

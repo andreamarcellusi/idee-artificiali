@@ -3,7 +3,7 @@
 <section class="paper"><div class="wrap">
   <div class="sec-h"><h2>{{ s.title }}</h2><p>{{ s.intro }}</p></div>
   {% if s["items"] %}<div class="three">
-    {% for it in s["items"] %}<div><b>{{ it.titolo }}</b><p>{{ it.testo }}</p>{% if it.url %}<p><a class="btn sec" href="{{ it.url }}">Apri</a></p>{% endif %}<p class="mono">{{ it.stato }}</p></div>{% endfor %}
+    {% for it in s["items"] %}<div><b>{{ it.titolo }}</b><p>{{ it.testo }}</p>{% if it.audio %}<audio class="ep" controls preload="none" src="{{ base }}{{ it.audio }}"></audio>{% if it.fonte %}<p><a href="{{ base }}{{ it.fonte }}">La scheda collegata →</a></p>{% endif %}{% endif %}{% if it.url %}<p><a class="btn sec" href="{{ it.url }}">Apri</a></p>{% endif %}<p class="mono">{{ it.stato }}</p></div>{% endfor %}
   </div>{% endif %}
   <div class="prose">{{ s.body_html|safe }}</div>
 </div></section>

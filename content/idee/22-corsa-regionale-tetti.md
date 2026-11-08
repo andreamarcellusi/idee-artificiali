@@ -1,5 +1,5 @@
 ---
-n: 24
+n: 22
 title: La corsa regionale al tetto 2025
 date: '2026-10-26'
 summary: Video sul ritmo con cui le Regioni esauriscono il tetto della spesa farmaceutica.

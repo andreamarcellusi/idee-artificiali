@@ -1,5 +1,5 @@
 ---
-n: 22
+n: 20
 title: 'SSN, 163 miliardi: chi li paga'
 date: '2026-10-13'
 summary: Scomposizione del finanziamento del Servizio sanitario nazionale per fonte.

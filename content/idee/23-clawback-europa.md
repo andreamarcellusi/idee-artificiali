@@ -1,5 +1,5 @@
 ---
-n: 25
+n: 23
 title: 'Clawback in Europa: Italia, Francia, Regno Unito, Grecia'
 date: '2026-10-29'
 summary: Come quattro paesi recuperano lo sforamento della spesa farmaceutica, e con quali aliquote effettive.
