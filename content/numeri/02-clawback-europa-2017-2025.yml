@@ -1,0 +1,24 @@
+titolo: Payback e clawback in Europa, 2017-2025
+sintesi: Spesa, tetti e ripiani italiani per gli acquisti diretti, parametri dei sistemi di Francia, Regno Unito e Grecia, e il controfattuale contabile a spesa invariata.
+idee: [clawback-europa]
+versione: "1.0"
+data: 2026-10-23
+copertura: Italia 2017-2025; Francia, Regno Unito, Grecia per gli anni disponibili
+unita: milioni di euro o sterline nominali, come indicato in ogni foglio
+fonte_primaria: AIFA (monitoraggi e consuntivi, determine di ripiano); per gli altri paesi le fonti ufficiali dei rispettivi sistemi. Il foglio Fonti registra 34 fonti con URL e riferimento di pagina.
+avvertenze:
+  - Il controfattuale è una simulazione contabile di meccanismi stilizzati a spesa invariata. Non stima quanto l'Italia avrebbe pagato applicando integralmente le leggi estere.
+  - Il ripiano 2025 è l'importo dell'avvio del procedimento, non un incasso.
+  - Per la Grecia rebate e clawback non sono ancora separati; il foglio GR_Contesto è solo di contesto.
+  - Ogni valore è marcato come osservato, calcolato o ipotesi; le celle vuote non valgono zero.
+files:
+  - file: Dati_payback_Europa_2017_2025.xlsx
+    descrizione: Base dati con legenda, dati italiani verificati, parametri esteri, controlli e fonti.
+  - file: Controfattuale_tetti_EU_2019_2025.xlsx
+    descrizione: Controfattuale contabile con parametri, scenari, sensibilità, metodo e dati dei grafici.
+  - file: payback_italia_spesa_tetti.csv
+    descrizione: Italia, spesa e tetti per canale con scostamenti (foglio IT_Verificati).
+  - file: payback_italia_ripiani.csv
+    descrizione: Italia, importi richiesti e versamenti (foglio IT_Ripiani).
+  - file: controfattuale_sintesi.csv
+    descrizione: Sintesi dei risultati del controfattuale.

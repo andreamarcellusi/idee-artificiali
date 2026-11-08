@@ -5,12 +5,15 @@ Uso:  python build.py
 Non servono altre dipendenze oltre a: pyyaml, markdown, jinja2.
 """
 import datetime as dt
+import csv
 import html
+import io
 import pathlib
 import re
 import shutil
 
 import markdown
+import openpyxl
 import yaml
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
@@ -122,6 +125,32 @@ def main():
         p["next"] = preistoria[i - 1] if i > 0 else None
         p["prev"] = preistoria[i + 1] if i + 1 < len(preistoria) else None
 
+    # I numeri: dataset
+    datasets = []
+    for f in sorted((CONTENT / "numeri").glob("*.yml")):
+        ds = yaml.safe_load(f.read_text(encoding="utf-8")); ds["slug"] = re.sub(r"^\d+-", "", f.stem)
+        cartella = ASSETS / "numeri" / ds["slug"]
+        for fi in ds["files"]:
+            pth = cartella / fi["file"]
+            if not pth.exists():
+                raise SystemExit(f"{f}: file {fi['file']} assente in {cartella}")
+            kb = pth.stat().st_size / 1024
+            fi["peso"] = f"{kb:.0f} KB" if kb < 1024 else f"{kb/1024:.1f} MB"
+            fi["tipo"] = pth.suffix[1:].upper()
+            fi["url"] = f"{base}/assets/numeri/{ds['slug']}/{fi['file']}"
+            if pth.suffix == ".csv":
+                txt = pth.read_text(encoding="utf-8-sig"); sep = ";" if txt.split("\n")[0].count(";") > txt.split("\n")[0].count(",") else ","
+                righe = list(csv.reader(io.StringIO(txt), delimiter=sep))
+                hdr = next((i for i, r in enumerate(righe) if sum(1 for c in r if c.strip()) >= 3), 0)
+                fi["colonne"] = [c for c in righe[hdr] if c.strip()]; fi["righe"] = len([r for r in righe[hdr + 1:] if any(c.strip() for c in r)])
+            elif pth.suffix == ".xlsx":
+                wb = openpyxl.load_workbook(pth, read_only=True); fi["fogli"] = wb.sheetnames
+        ds["idee_obj"] = [by_slug[x] for x in ds.get("idee", []) if x in by_slug]
+        for p in ds["idee_obj"]:
+            p.setdefault("datasets", []).append(ds)
+        ds["data_it"] = date_it(ds["data"])
+        datasets.append(ds)
+
     # Output
     if OUT.exists():
         shutil.rmtree(OUT)
@@ -154,7 +183,7 @@ def main():
             env.get_template("idea.html").render(p=p, page_title=p["title"], description=p["summary"], og_image=og, current=None),
             encoding="utf-8")
 
-    for name in ["ripensamenti", "numeri", "voci", "istruzioni"]:
+    for name in ["ripensamenti", "voci", "istruzioni"]:
         s = read_md(CONTENT / f"{name}.md")
         d = OUT / name
         d.mkdir()
@@ -162,6 +191,14 @@ def main():
             env.get_template("section.html").render(s=s, page_title=s["title"], description=s.get("intro"), current=f"/{name}/"),
             encoding="utf-8")
 
+    s = read_md(CONTENT / "numeri.md")
+    (OUT / "numeri").mkdir()
+    (OUT / "numeri" / "index.html").write_text(env.get_template("numeri.html").render(s=s, datasets=datasets, page_title=s["title"], description=s.get("intro"), current="/numeri/"), encoding="utf-8")
+    for ds in datasets:
+        d = OUT / "numeri" / ds["slug"]; d.mkdir()
+        (d / "index.html").write_text(env.get_template("dataset.html").render(ds=ds, page_title=ds["titolo"], description=ds["sintesi"], current="/numeri/"), encoding="utf-8")
+
+    print(f"{len(datasets)} dataset")
     print(f"ok: {len(idee)} idee, {len(preistoria)} preistoria, {n_car} caroselli -> {OUT}")
 
 

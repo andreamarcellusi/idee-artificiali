@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block body %}
+<section class="paper"><div class="wrap">
+  <div class="sec-h"><h2>{{ s.title }}</h2><p>{{ s.intro }}</p></div>
+  <div class="reg">
+  {% for ds in datasets %}
+    <a class="row" href="{{ base }}/numeri/{{ ds.slug }}/">
+      <div class="n">D{{ loop.index }}</div>
+      <div><h3>{{ ds.titolo }}</h3><p>{{ ds.sintesi }}</p></div>
+      <div class="r"><span>{{ ds.data_it }}</span><span>v{{ ds.versione }} · {{ ds.files|length }} file</span><span><span class="tag">{{ site.licenza_dati }}</span></span></div>
+    </a>
+  {% endfor %}
+  </div>
+  <div class="prose">{{ s.body_html|safe }}</div>
+</div></section>
+{% endblock %}

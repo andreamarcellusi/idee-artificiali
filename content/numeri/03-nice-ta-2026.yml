@@ -1,0 +1,21 @@
+titolo: NICE Technology Appraisals prima e dopo la nuova soglia
+sintesi: Le valutazioni NICE pubblicate da aprile a settembre 2026, il confronto con le finestre precedenti dal 2023 e la soglia massima dichiarata dai comitati.
+idee: [nice-soglia]
+versione: "1.0"
+data: 2026-09-26
+copertura: Technology Appraisal NICE pubblicate tra gennaio 2023 e settembre 2026
+unita: sterline per QALY dove indicato; esiti e processi come classificati da NICE
+fonte_primaria: NICE, pagine delle singole Technology Appraisal e catalogo delle guidance (nice.org.uk). Ogni riga riporta il link alla guidance e la sezione da cui è tratto il dato.
+avvertenze:
+  - L'ICER effettivo è quasi sempre coperto da sconti riservati. La soglia massima è quella che il comitato dichiara accettabile, non il prezzo pagato.
+  - Le citazioni dai documenti NICE sono brevi estratti in inglese, riportati per verificabilità; il contenuto resta di NICE.
+  - I CSV usano il punto e virgola come separatore.
+files:
+  - file: NICE_TA_2023_2026.xlsx
+    descrizione: I tre file in un'unica cartella di lavoro, un foglio ciascuno.
+  - file: NICE_TA_2026-04-01_2026-09-23.csv
+    descrizione: 50 valutazioni aprile-settembre 2026 con esito, ICER, soglia, severità e riferimenti alla nuova soglia.
+  - file: NICE_confronto_finestre_2026-09-24.csv
+    descrizione: 264 valutazioni in quattro finestre (anno 2023, anno 2024, aprile-settembre 2025, ottobre 2025-marzo 2026) per il confronto degli esiti.
+  - file: NICE_P1_soglia_dichiarata_2026-09-26.csv
+    descrizione: Finestra aprile-settembre 2025, soglia massima dichiarata dal comitato con citazione e sezione.

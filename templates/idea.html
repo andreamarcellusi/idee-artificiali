@@ -61,7 +61,7 @@
     <div class="box"><h4>Registro delle correzioni</h4>
       {% if p.correzioni %}<ul class="reg-corr">{% for c in p.correzioni %}<li><b>v{{ c.versione }} · {{ c.data }}</b> {{ c.testo }}{% if c.grazie %} <span class="note">Segnalazione di {{ c.grazie }}.</span>{% endif %}</li>{% endfor %}</ul>{% else %}<p class="note">Nessuna correzione, per ora. Non è detto che sia un buon segno.</p>{% endif %}
     </div>
-    <div class="box"><h4>I numeri</h4>{% if p.dataset %}<p><a href="{{ base }}{{ p.dataset }}">Dataset</a></p>{% else %}<p class="note">Nessun dataset associato, oppure dati non ridistribuibili.</p>{% endif %}</div>
+    <div class="box"><h4>I numeri</h4>{% if p.datasets %}{% for ds in p.datasets %}<p><a href="{{ base }}/numeri/{{ ds.slug }}/">{{ ds.titolo }} ↓</a></p>{% endfor %}{% else %}<p class="note">Nessun dataset associato, oppure dati non ridistribuibili.</p>{% endif %}</div>
     <div class="box"><h4>Come citare, se proprio</h4><p class="note">{{ site.author }} ({{ p.date[:4] }}). {{ p.title }}. In: {{ site.title }}, n. {{ p.code }}. {{ site_url }}/{{ p.sezione }}/{{ p.slug }}/</p></div>
     {% if p.prev or p.next %}<div class="box nav2">{% if p.prev %}<a href="{{ base }}/{{ p.sezione }}/{{ p.prev.slug }}/">← {{ p.prev.code }}</a>{% endif %}{% if p.next %}<a href="{{ base }}/{{ p.sezione }}/{{ p.next.slug }}/">{{ p.next.code }} →</a>{% endif %}</div>{% endif %}
    </aside>

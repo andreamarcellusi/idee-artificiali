@@ -1,0 +1,21 @@
+TETTI DI SPESA EU | controfattuale contabile,,,
+"23 ottobre 2026 • Acquisti diretti italiani esclusi gas • Tutti i risultati sono simulazioni di meccanismi, non stime del dovuto secondo le leggi estere.",,,
+Indicatore / scenario,"2025, mln €","Cumulato 2019–25, mln €",Significato / limite
+"Spesa AD italiana, esclusi gas",16002.4,89128.5,"Spesa di monitoraggio, non totale farmaceutica."
+"Tetto AD italiano, esclusi gas",11235.3,66813.919977,Budget utilizzato nel confronto A.
+Eccedenza prima del ripiano,4767.1,22314.580023,Calcolata su S e B disponibili.
+Ripiano AIFA richiesto: riferimento,2385.437778,11088.123441,OSSERVATO. Il 2025 è avvio del procedimento; NON è incassato.
+"A | STESSA SPESA, STESSO BUDGET",,,
+A | Quota del 50% dell'eccedenza,2383.55,11157.290012,STIMATO. Riferimento italiano stilizzato.
+"A | Scaglioni FR, prima dei plafond",3320.11705,15519.985136,STIMATO. NON contributo francese effettivo.
+A | Ripiano integrale dell'eccedenza,4767.1,22314.580023,STIMATO. Archetipo di budget chiuso.
+Sensibilità | cap macro 10% di S,1600.24,8912.85,IPOTESI. NON replica il massimale aziendale FR.
+B | CAMBIA LA TRAIETTORIA DEL BUDGET,,,
+"B | R100 con UKg, base tetto 2019",7282.175222,32386.442766,STIMATO. Solo i tassi di crescita UK.
+"B | R100 con UKg, base spesa 2019",4177.341292,12183.446965,"STIMATO. Stessi tassi, diverso finanziamento iniziale."
+CRESCITA CUMULATA 2019–2025,,,
+Spesa AD italiana,0.550139,,
+Tetto AD italiano,0.475863,,
+Traiettoria dei soli tassi UKg,0.145484,,
+"Il risultato non è una classifica dei Paesi: è una scomposizione di quanto dipende dalla regola di restituzione, dalla crescita del budget e dalla base iniziale. Più ripiano non significa meno farmaci consumati né maggiore efficienza.",,,
+Lettura corretta: usare le qualifiche 'simulazione contabile' e 'meccanismi stilizzati'. Non presentare le colonne FR o UKg come applicazione integrale delle norme estere.,,,

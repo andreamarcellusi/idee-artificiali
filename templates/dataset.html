@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block body %}
+<section class="paper"><div class="wrap">
+  <a class="back" href="{{ base }}/numeri/">← I numeri</a>
+  <div class="scheda">
+   <article>
+    <div class="kicker">Dataset · versione {{ ds.versione }} · {{ ds.data_it }}</div>
+    <h1>{{ ds.titolo }}</h1>
+    <p class="note">{{ ds.sintesi }}</p>
+
+    <h2>I file</h2>
+    <div class="files">
+    {% for fi in ds.files %}
+      <div class="file">
+        <div class="fh"><a class="btn sec" href="{{ fi.url }}" download>{{ fi.tipo }} ↓</a><div><b>{{ fi.file }}</b><span class="note">{{ fi.peso }}{% if fi.righe %} · {{ fi.righe }} righe{% endif %}</span></div></div>
+        <p>{{ fi.descrizione }}</p>
+        {% if fi.fogli %}<p class="mono small">Fogli: {{ fi.fogli|join(' · ') }}</p>{% endif %}
+        {% if fi.colonne %}<details><summary>Variabili ({{ fi.colonne|length }})</summary><p class="mono small">{{ fi.colonne|join(' · ') }}</p></details>{% endif %}
+      </div>
+    {% endfor %}
+    </div>
+
+    <h2>Da leggere prima di usarli</h2>
+    <ul class="avv">{% for a in ds.avvertenze %}<li>{{ a }}</li>{% endfor %}</ul>
+   </article>
+   <aside>
+    <div class="box"><h4>Scheda</h4><dl>
+      <dt>Copertura</dt><dd>{{ ds.copertura }}</dd>
+      <dt>Unità</dt><dd>{{ ds.unita }}</dd>
+      <dt>Versione</dt><dd>{{ ds.versione }}</dd>
+      <dt>Licenza</dt><dd>{{ site.licenza_dati }}</dd>
+    </dl></div>
+    <div class="box"><h4>Fonte primaria</h4><p class="note">{{ ds.fonte_primaria }}</p></div>
+    {% if ds.idee_obj %}<div class="box"><h4>Le idee che lo usano</h4>{% for p in ds.idee_obj %}<p><a href="{{ base }}/idee/{{ p.slug }}/">{{ p.code }} · {{ p.title }}</a></p>{% endfor %}</div>{% endif %}
+    <div class="box"><h4>Come citare</h4><p class="note">{{ site.author }} ({{ ds.data|string|truncate(4, True, '') }}). {{ ds.titolo }}, versione {{ ds.versione }}. {{ site_url }}/numeri/{{ ds.slug }}/</p></div>
+   </aside>
+  </div>
+</div></section>
+{% endblock %}

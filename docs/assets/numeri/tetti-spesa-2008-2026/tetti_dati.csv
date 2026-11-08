@@ -1,0 +1,23 @@
+Anno,FSN nominale (mln €),Base di calcolo AIFA (mln €),Base / FSN nominale,% tetto territoriale/convenzionata,Tetto territoriale/convenzionata (mln €),% tetto ospedaliera/acquisti diretti (incl. gas),Tetto ospedaliera/acquisti diretti (mln €),Tetto complessivo (mln €),% tetto complessivo,Verifica: tetto ricalcolato − letto (mln €),Note
+2008,101588,98542,0.970016,0.14,13796,0.024,2365,16161,0.164001,-0.1,"Base e tetto territoriale stimati dal tetto ospedaliero (2.365 = 3.565,6 − 1.200,6); FSN nominale da serie FIASO"
+2009,104204,102675.5,0.985332,0.136,13963.9,0.024,2464.2,16428.1,0.16,0,"Tetto ospedaliero calcolato (2,4% × base); FSN nominale da serie FIASO"
+2010,105569,105000,0.99461,0.133,13965,0.024,2520,16485,0.157,0,"Base stimata (13.965 / 13,3%); tetto ospedaliero calcolato"
+2011,106905.3,106264.8,0.994009,0.133,14133.2,0.024,2550,16683.2,0.156996,0.4,
+2012,107960.7,107164.8,0.992628,0.131,14038.6,0.024,2572,16610.6,0.155001,-0.1,"13,1% da DL 95/2012"
+2013,107004,106412.4,0.994471,0.1135,12077.8,0.035,3724.4,15802.2,0.1485,0,"FSN nominale da serie FIASO; primo anno con ospedaliera al 3,5%"
+2014,109928,109268.1,0.993997,0.1135,12401.9,0.035,3824.4,16226.3,0.1485,0,
+2015,109715,109078.6,0.9942,0.1135,12380.4,0.035,3817.8,16198.2,0.1485,0,
+2016,111002,110328.7,0.993934,0.1135,12522.3,0.035,3861.5,16383.8,0.1485,0,
+2017,112577,111892,0.993915,0.0796,8907,0.0689,7709,16616,0.1485,0,Nuovi canali L. 232/2016; FSN nominale da serie FIASO
+2018,113404,112774,0.994445,0.0796,8976.8,0.0689,7770,16746.8,0.148499,0.1,FSN nominale da serie FIASO
+2019,114474,113791.9,0.994041,0.0796,9057.8,0.0689,7840.3,16898.1,0.1485,0,"Dal 2019 scorporo gas medicinali 0,20% (tetto gas calcolato)"
+2020,120557,119573.4,0.991841,0.0796,9518,0.0689,8238.6,17756.6,0.1485,0,
+2021,122060.8,120924.4,0.99069,0.07,8464.7,0.0785,9492.5,17957.2,0.148499,0.1,"Acquisti diretti 7,65% + 0,20% gas"
+2022,125980,124613.8,0.989155,0.07,8723,0.0785,9782.2,18505.2,0.1485,-0.1,"AIFA applica 7,65% + 0,20% gas, non l'8% di L. 234/2021"
+2023,128869.2,127584.7,0.990033,0.07,8930.9,0.0815,10398.2,19329.1,0.1515,0,"Acquisti diretti 7,95% + 0,20% gas"
+2024,134017,133008.2,0.992473,0.068,9044.6,0.085,11305.7,20350.3,0.153,0,"L. 213/2023: 8,30% + 0,20% gas; convenzionata 6,8%"
+2025,136540.1,135364.9,0.991393,0.068,9204.8,0.085,11506,20710.8,0.153,0,Base definitiva MdS 15/06/2026
+2026,142890,140753.1,0.985045,0.0685,9641.6,0.088,12386.3,22027.9,0.1565,0,"L. 199/2025: 8,60% + 0,20% gas; convenzionata 6,85%. Base provvisoria; tetti annui calcolati; FSN nominale ≈ 142,89 mld"
+Legenda: testo blu = valori letti o stimati da fonte; nero = formule. Colonna K: scarto tra % × base e tetto letto nella fonte (arrotondamenti AIFA).,,,,,,,,,,,
+FSN nominale: livello del finanziamento del fabbisogno sanitario nazionale standard cui concorre lo Stato (lordo del Fondo innovativi).,,,,,,,,,,,
+Base di calcolo AIFA: fabbisogno definitivo comunicato dal Ministero della Salute e usato nella verifica dei tetti (2026 provvisorio).,,,,,,,,,,,
