@@ -25,7 +25,8 @@ temi:
   ai: AI e metodi
   formazione: Formazione
 nav:
-  - [Le idee, /]
+  - [Home, /]
+  - [Le idee, /idee/]
   - [I ripensamenti, /ripensamenti/]
   - [I numeri, /numeri/]
   - [Le voci, /voci/]
@@ -36,3 +37,9 @@ footer: >-
   Andrea Marcellusi, con l'aiuto di alcuni modelli linguistici che non hanno
   chiesto di essere citati. Sito personale, non istituzionale. Contenuti
   CC BY 4.0 salvo diversa indicazione.
+tema_colors:
+  spesa: "#1B2A4A"
+  accesso: "#E8772E"
+  oncologia: "#7a4a8a"
+  ai: "#2e7d6b"
+  formazione: "#8a7a4a"

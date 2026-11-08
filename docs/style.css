@@ -121,3 +121,25 @@ footer .tiny{font-family:var(--mono);font-size:12px}
 .prose.cols{max-width:none;margin-top:14px;column-width:30ch;column-gap:40px}
 .prose.cols p{break-inside:avoid;margin:0 0 1em}
 .prose.cols p:first-child::first-letter{font-family:var(--display);font-size:3.1em;float:left;line-height:.8;padding:6px 8px 0 0;color:var(--orange)}
+
+/* ricerca */
+.cerca{border-bottom:1px solid var(--line)}
+.searchbar{display:flex;align-items:center;gap:14px;margin-top:16px}
+#q{flex:1;min-width:0;font:inherit;font-size:18px;padding:12px 14px;border:2px solid var(--ink);border-radius:4px;background:var(--cream);color:var(--fg)}
+#q:focus{outline:3px solid var(--orange);outline-offset:2px}
+.hits{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.reg.compact .row{padding:12px 4px}
+.reg.compact .row .n{font-size:26px}
+.reg.compact h3{font-size:clamp(18px,2vw,22px)}
+.more{margin:22px 0 0}
+/* rete */
+.graph{margin-top:18px;background:var(--cream);border:1px solid var(--line);min-height:360px}
+.graph svg{display:block;width:100%;height:auto}
+.graph .l-weak{stroke:var(--line);stroke-width:1}
+.graph .l-strong{stroke:var(--orange);stroke-width:2.5}
+.graph .node circle{stroke:var(--cream);stroke-width:2;cursor:pointer}
+.graph .node text{font-family:var(--mono);font-size:11px;font-weight:600;fill:#fff;pointer-events:none}
+.graph .node:hover circle{stroke:var(--orange)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--muted)}
+.legend .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.t-spesa{background:#1B2A4A}.t-accesso{background:#E8772E}.t-oncologia{background:#7a4a8a}.t-ai{background:#2e7d6b}.t-formazione{background:#8a7a4a}

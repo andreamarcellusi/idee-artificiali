@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block body %}
+<section class="paper"><div class="wrap">
+  <div class="sec-h"><h2>Le idee</h2><p>Tutte, in ordine cronologico inverso. Ogni voce apre la scheda con testo, carosello, fonti e dati.</p></div>
+  <div class="filters" id="filters">
+    <button class="chip on" data-t="all" type="button">Tutte</button>
+    {% for k, v in site.temi.items() %}<button class="chip" data-t="{{ k }}" type="button">{{ v }}</button>{% endfor %}
+  </div>
+  <div class="reg" id="reg">
+  {% for p in idee %}
+    <a class="row" href="{{ base }}/idee/{{ p.slug }}/" data-t="{{ p.temi|join(' ') }}">
+      <div class="n">{{ '%02d' % p.n }}</div>
+      <div><h3>{{ p.title }}</h3><p>{{ p.summary }}</p></div>
+      <div class="r"><span>{{ p.date_it }}</span><span>{{ p.allegato_label }}</span>
+        <span><span class="tag {{ 'ok' if p.stato == 'verificato' else 'warn' }}">{{ p.stato }}</span> {% for t in p.temi %}<span class="tag">{{ site.temi[t] }}</span> {% endfor %}</span></div>
+    </a>
+  {% endfor %}
+  </div>
+</div></section>
+<script>
+const chips=[...document.querySelectorAll('#filters .chip')],rows=[...document.querySelectorAll('#reg .row')];
+chips.forEach(c=>c.addEventListener('click',()=>{chips.forEach(x=>x.classList.toggle('on',x===c));const t=c.dataset.t;rows.forEach(r=>r.hidden=!(t==='all'||r.dataset.t.split(' ').includes(t)))}));
+</script>
+{% endblock %}

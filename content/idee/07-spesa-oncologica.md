@@ -14,6 +14,9 @@ data_dati: da indicare
 versione: '1.0'
 testo: da importare
 fonti: []
+collegata_a:
+- osmed-2025
+- innovativita-2007-2025
 ---
 
 <!-- Il testo del post pubblicato va incollato qui sotto, identico a LinkedIn. -->

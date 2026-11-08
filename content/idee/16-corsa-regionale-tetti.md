@@ -12,6 +12,8 @@ data_dati: da indicare
 versione: '1.0'
 testo: da importare
 fonti: []
+collegata_a:
+- tetti-previsioni
 ---
 
 <!-- Il testo del post pubblicato va incollato qui sotto, identico a LinkedIn. -->

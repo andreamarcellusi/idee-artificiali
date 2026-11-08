@@ -13,6 +13,8 @@ data_dati: da indicare
 versione: '1.0'
 testo: da importare
 fonti: []
+collegata_a:
+- spesa-farmaceutica-europa
 ---
 
 <!-- Il testo del post pubblicato va incollato qui sotto, identico a LinkedIn. -->

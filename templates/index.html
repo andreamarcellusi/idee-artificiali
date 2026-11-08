@@ -12,32 +12,85 @@
   </div>
 </div></section>
 <div class="ticker"><div>{% for t in site.ticker %}<span>{{ t }}</span><span>·</span>{% endfor %}</div></div>
+
 <section class="paper genesi"><div class="wrap">
   <div class="sec-h"><h2>{{ genesi.title }}</h2></div>
   <div class="prose cols">{{ genesi.body_html|safe }}</div>
 </div></section>
-<section class="paper"><div class="wrap">
-  <div class="sec-h"><h2>Le idee</h2><p>In ordine cronologico inverso. Ogni voce apre la scheda con testo, carosello, fonti e dati.</p></div>
+
+<section class="paper cerca"><div class="wrap">
+  <div class="sec-h"><h2>Cerca un'idea</h2><p>Una parola nel titolo, nel testo o nelle fonti. Oppure un tema.</p></div>
+  <div class="searchbar">
+    <input id="q" type="search" placeholder="tetti, clawback, NICE, early access…" autocomplete="off" aria-label="Cerca tra le idee">
+    <span class="hits" id="hits"></span>
+  </div>
   <div class="filters" id="filters">
     <button class="chip on" data-t="all" type="button">Tutte</button>
     {% for k, v in site.temi.items() %}<button class="chip" data-t="{{ k }}" type="button">{{ v }}</button>{% endfor %}
   </div>
-  <div class="reg" id="reg">
+  <div class="reg compact" id="reg">
   {% for p in idee %}
-    <a class="row" href="{{ base }}/idee/{{ p.slug }}/" data-t="{{ p.temi|join(' ') }}">
+    <a class="row" href="{{ base }}/idee/{{ p.slug }}/" data-t="{{ p.temi|join(' ') }}" data-s="{{ p.search_text }}">
       <div class="n">{{ '%02d' % p.n }}</div>
       <div><h3>{{ p.title }}</h3><p>{{ p.summary }}</p></div>
-      <div class="r"><span>{{ p.date_it }}</span><span>{{ p.allegato_label }}</span>
-        <span><span class="tag {{ 'ok' if p.stato == 'verificato' else 'warn' }}">{{ p.stato }}</span> {% for t in p.temi %}<span class="tag">{{ site.temi[t] }}</span> {% endfor %}</span></div>
+      <div class="r"><span>{{ p.date_it }}</span><span>{{ p.allegato_label }}</span></div>
     </a>
   {% endfor %}
   </div>
+  <p class="note" id="empty" hidden>Nessuna idea con queste parole. O non l'ho ancora avuta, o non l'ho ancora archiviata.</p>
+  <p class="more"><a class="btn sec" href="{{ base }}/idee/">Tutte le idee, in ordine cronologico</a></p>
 </div></section>
+
+<section class="paper rete"><div class="wrap">
+  <div class="sec-h"><h2>La rete</h2><p>Come le idee si tengono insieme. Linee piene: un'idea riprende l'altra. Linee sottili: stesso tema. I numeri aprono le schede.</p></div>
+  <div class="graph" id="graph"></div>
+  <div class="legend">{% for k, v in site.temi.items() %}<span><i class="dot t-{{ k }}"></i>{{ v }}</span>{% endfor %}</div>
+</div></section>
+
+<script src="{{ base }}/assets/js/d3.min.js"></script>
 <script>
+/* ricerca + filtri */
 const chips=[...document.querySelectorAll('#filters .chip')],rows=[...document.querySelectorAll('#reg .row')];
-chips.forEach(c=>c.addEventListener('click',()=>{chips.forEach(x=>x.classList.toggle('on',x===c));const t=c.dataset.t;rows.forEach(r=>r.hidden=!(t==='all'||r.dataset.t.split(' ').includes(t)))}));
+const q=document.getElementById('q'),hits=document.getElementById('hits'),empty=document.getElementById('empty');
+let tema='all';
+const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
+function apply(){const words=norm(q.value).split(/\s+/).filter(Boolean).map(w=>w.length>=5?w.slice(0,-1):w);let n=0;
+ rows.forEach(r=>{const okT=tema==='all'||r.dataset.t.split(' ').includes(tema);const hay=norm(r.dataset.s);const okQ=words.every(w=>hay.includes(w));r.hidden=!(okT&&okQ);if(!r.hidden)n++});
+ hits.textContent=(words.length||tema!=='all')?`${n} ${n===1?'idea':'idee'}`:'';empty.hidden=n>0;}
+chips.forEach(c=>c.addEventListener('click',()=>{chips.forEach(x=>x.classList.toggle('on',x===c));tema=c.dataset.t;apply()}));
+q.addEventListener('input',apply);
+/* prompt animato */
 const lines={{ site.prompts|tojson }},el=document.getElementById('typed');
 if(!matchMedia('(prefers-reduced-motion: reduce)').matches){let li=0,ci=lines[0].length,del=true;
 (function type(){const s=lines[li];if(!del){el.textContent=s.slice(0,++ci);if(ci===s.length){del=true;return setTimeout(type,2600)}return setTimeout(type,34+Math.random()*40)}el.textContent=s.slice(0,--ci);if(ci===0){del=false;li=(li+1)%lines.length;return setTimeout(type,500)}setTimeout(type,14)})();}
+/* rete */
+const G={{ graph|tojson }};
+(function(){
+ const box=document.getElementById('graph');if(!window.d3||!box)return;
+ const colors={{ tema_colors|tojson }};
+ function draw(){
+  box.innerHTML='';const W=box.clientWidth,H=Math.max(360,Math.min(560,W*0.55));
+  const svg=d3.select(box).append('svg').attr('viewBox',[0,0,W,H]).attr('width',W).attr('height',H);
+  const nodes=G.nodes.map(d=>({...d})),links=G.links.map(d=>({...d}));
+  const deg={};links.forEach(l=>{deg[l.source]=(deg[l.source]||0)+(l.strong?2:1);deg[l.target]=(deg[l.target]||0)+(l.strong?2:1)});
+  const sim=d3.forceSimulation(nodes)
+    .force('link',d3.forceLink(links).id(d=>d.id).distance(l=>l.strong?70:120).strength(l=>l.strong?.7:.15))
+    .force('charge',d3.forceManyBody().strength(-220))
+    .force('center',d3.forceCenter(W/2,H/2))
+    .force('collide',d3.forceCollide(26));
+  const link=svg.append('g').selectAll('line').data(links).join('line')
+    .attr('class',l=>l.strong?'l-strong':'l-weak');
+  const node=svg.append('g').selectAll('a').data(nodes).join('a').attr('href',d=>d.url).attr('class','node');
+  node.append('circle').attr('r',d=>12+2.2*(deg[d.id]||0)).attr('fill',d=>colors[d.tema]);
+  node.append('text').text(d=>d.n).attr('text-anchor','middle').attr('dy','.35em');
+  node.append('title').text(d=>d.title);
+  node.call(d3.drag().on('start',(e,d)=>{if(!e.active)sim.alphaTarget(.3).restart();d.fx=d.x;d.fy=d.y}).on('drag',(e,d)=>{d.fx=e.x;d.fy=e.y}).on('end',(e,d)=>{if(!e.active)sim.alphaTarget(0);d.fx=null;d.fy=null}));
+  const r=d=>12+2.2*(deg[d.id]||0);
+  sim.on('tick',()=>{nodes.forEach(d=>{d.x=Math.max(r(d),Math.min(W-r(d),d.x));d.y=Math.max(r(d),Math.min(H-r(d),d.y))});
+   link.attr('x1',d=>d.source.x).attr('y1',d=>d.source.y).attr('x2',d=>d.target.x).attr('y2',d=>d.target.y);
+   node.attr('transform',d=>`translate(${d.x},${d.y})`)});
+ }
+ draw();let t;addEventListener('resize',()=>{clearTimeout(t);t=setTimeout(draw,250)});
+})();
 </script>
 {% endblock %}

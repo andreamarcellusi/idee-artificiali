@@ -13,6 +13,9 @@ data_dati: da indicare
 versione: '1.0'
 testo: da importare
 fonti: []
+collegata_a:
+- jca-factual-accuracy
+- early-access
 ---
 
 <!-- Il testo del post pubblicato va incollato qui sotto, identico a LinkedIn. -->

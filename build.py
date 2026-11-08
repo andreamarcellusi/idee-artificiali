@@ -60,7 +60,29 @@ def main():
             p["pages"] = [x.name for x in pages]
             p["allegato_label"] = f"carosello · {len(pages)} pagine"
         idee.append(p)
+    for p in idee:
+        fonti = " ".join(f.get("titolo", "") for f in (p.get("fonti") or []))
+        p["search_text"] = re.sub(r"\s+", " ", f'{p["title"]} {p["summary"]} {p["body_raw"]} {fonti} {" ".join(site["temi"][t] for t in p["temi"])}')
     idee.sort(key=lambda x: (str(x["date"]), x["n"]), reverse=True)
+    # rete: nodi e collegamenti (espliciti = strong; stesso tema = weak)
+    by_slug = {p["slug"]: p for p in idee}
+    nodes = [{"id": p["slug"], "n": f'{p["n"]:02d}', "title": p["title"], "tema": p["temi"][0], "url": f'{base}/idee/{p["slug"]}/'} for p in idee]
+    seen, glinks = set(), []
+    for p in idee:
+        for s in p.get("collegata_a") or []:
+            if s not in by_slug:
+                raise SystemExit(f'{p["slug"]}: collegata_a "{s}" non esiste')
+            k = tuple(sorted((p["slug"], s)))
+            if k not in seen:
+                seen.add(k); glinks.append({"source": k[0], "target": k[1], "strong": True})
+    for i, a in enumerate(idee):
+        for bq in idee[i + 1:]:
+            if set(a["temi"]) & set(bq["temi"]):
+                k = tuple(sorted((a["slug"], bq["slug"])))
+                if k not in seen:
+                    seen.add(k); glinks.append({"source": k[0], "target": k[1], "strong": False})
+    graph = {"nodes": nodes, "links": glinks}
+    tema_colors = site.get("tema_colors", {})
     for i, p in enumerate(idee):
         p["next"] = idee[i - 1] if i > 0 else None       # più recente
         p["prev"] = idee[i + 1] if i + 1 < len(idee) else None  # più vecchia
@@ -78,7 +100,9 @@ def main():
 
     n_car = sum(1 for p in idee if p.get("allegato") == "carosello")
     genesi = read_md(CONTENT / "genesi.md")
-    (OUT / "index.html").write_text(env.get_template("index.html").render(idee=idee, genesi=genesi, n_caroselli=n_car, current="/"), encoding="utf-8")
+    (OUT / "index.html").write_text(env.get_template("index.html").render(idee=idee, genesi=genesi, n_caroselli=n_car, graph=graph, tema_colors=tema_colors, current="/"), encoding="utf-8")
+    (OUT / "idee").mkdir(exist_ok=True)
+    (OUT / "idee" / "index.html").write_text(env.get_template("idee.html").render(idee=idee, page_title="Le idee", current="/idee/"), encoding="utf-8")
 
     for p in idee:
         d = OUT / "idee" / p["slug"]
