@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Idee poco intelligenti e molto artificiali</title>
-<meta name="description" content="Un economista sanitario, qualche modello linguistico e il mercato farmaceutico italiano. Le fonti sono vere, i numeri verificati, le conclusioni discutibili per costruzione. Questo è l&#39;archivio, in attesa di diventare un libro.">
+<meta name="description" content="Un economista sanitario, qualche modello linguistico e il mercato farmaceutico italiano. Le fonti sono vere, i numeri verificati, le conclusioni discutibili per costruzione. Il tentativo è portare la ricerca fuori dalle riviste, fino a chi decide, prescrive, paga o aspetta un farmaco.">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;1,9..144,500;1,9..144,700&family=JetBrains+Mono:wght@400;600&family=Carlito:wght@400;700&display=swap">
 <link rel="stylesheet" href="/style.css">
 
 <meta property="og:title" content="Idee poco intelligenti e molto artificiali">
-<meta property="og:description" content="Un economista sanitario, qualche modello linguistico e il mercato farmaceutico italiano. Le fonti sono vere, i numeri verificati, le conclusioni discutibili per costruzione. Questo è l&#39;archivio, in attesa di diventare un libro.">
+<meta property="og:description" content="Un economista sanitario, qualche modello linguistico e il mercato farmaceutico italiano. Le fonti sono vere, i numeri verificati, le conclusioni discutibili per costruzione. Il tentativo è portare la ricerca fuori dalle riviste, fino a chi decide, prescrive, paga o aspetta un farmaco.">
 </head>
 <body>
 <header class="top"><div class="wrap">
@@ -25,7 +25,7 @@
 <section class="cover"><div class="wrap">
   <h1>Idee <s>poco</s> intelligenti<br>e <em>molto</em> artificiali</h1>
   <div class="prompt"><span class="u">&gt; </span><span id="typed">analizza il mercato farmaceutico italiano. sii onesto, non gentile.</span><span class="cur"></span></div>
-  <p class="lede">Un economista sanitario, qualche modello linguistico e il mercato farmaceutico italiano. Le fonti sono vere, i numeri verificati, le conclusioni discutibili per costruzione. Questo è l&#39;archivio, in attesa di diventare un libro.</p>
+  <p class="lede">Un economista sanitario, qualche modello linguistico e il mercato farmaceutico italiano. Le fonti sono vere, i numeri verificati, le conclusioni discutibili per costruzione. Il tentativo è portare la ricerca fuori dalle riviste, fino a chi decide, prescrive, paga o aspetta un farmaco.</p>
   <div class="counts">
     <div><b>24</b><span>idee</span></div>
     <div><b>14</b><span>caroselli</span></div>
@@ -50,6 +50,7 @@
     <li class="step"><div class="sn"><span>05</span></div><div class="sb"><div class="kicker">Lo strumento</div><p>L&#39;intelligenza artificiale, in tutto questo, è lo strumento che ha reso il percorso veloce. Non quello che decide se un&#39;idea regge. Per quello ci sono i numeri, le fonti e, se va bene, chi legge.</p></div></li>
   
   </ol>
+  <blockquote class="perche"><div class="kicker">Perché in pubblico</div><p>La ricerca in economia sanitaria finisce quasi sempre su riviste che leggono in pochi. Le decisioni sui farmaci invece passano per molte mani: AIFA e Regioni, farmacisti ospedalieri, clinici, aziende, associazioni di pazienti, giornalisti. Se un dato serve a decidere, deve arrivare a tutti loro in una forma comprensibile, senza perdere il metodo per strada. Questo sito è un esperimento in quella direzione.</p></blockquote>
 </div></section>
 
 
@@ -122,7 +123,7 @@
 (function(){const st=[...document.querySelectorAll('.step')];if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion: reduce)').matches){st.forEach(e=>e.classList.add('on'));return}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.4});st.forEach(e=>io.observe(e))})();
 /* prompt animato */
-const lines=["analizza il mercato farmaceutico italiano. sii onesto, non gentile.", "spiega perch\u00e9 i tetti di spesa si sforano ogni anno. in 300 parole, senza colpevoli.", "confronta i tempi di accesso ai farmaci in Italia, Francia e Spagna. cita solo fonti vere.", "scrivi un libro sulla politica farmaceutica. io controllo i numeri."],el=document.getElementById('typed');
+const lines=["analizza il mercato farmaceutico italiano. sii onesto, non gentile.", "spiega perch\u00e9 i tetti di spesa si sforano ogni anno. in 300 parole, senza colpevoli.", "confronta i tempi di accesso ai farmaci in Italia, Francia e Spagna. cita solo fonti vere.", "spiega il payback a un assessore, a un farmacista e a un paziente. stessi numeri."],el=document.getElementById('typed');
 if(!matchMedia('(prefers-reduced-motion: reduce)').matches){let li=0,ci=lines[0].length,del=true;
 (function type(){const s=lines[li];if(!del){el.textContent=s.slice(0,++ci);if(ci===s.length){del=true;return setTimeout(type,2600)}return setTimeout(type,34+Math.random()*40)}el.textContent=s.slice(0,--ci);if(ci===0){del=false;li=(li+1)%lines.length;return setTimeout(type,500)}setTimeout(type,14)})();}
 /* rete */

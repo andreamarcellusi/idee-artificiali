@@ -6,12 +6,13 @@ author: Andrea Marcellusi
 lede: >-
   Un economista sanitario, qualche modello linguistico e il mercato farmaceutico
   italiano. Le fonti sono vere, i numeri verificati, le conclusioni discutibili
-  per costruzione. Questo è l'archivio, in attesa di diventare un libro.
+  per costruzione. Il tentativo è portare la ricerca fuori dalle riviste, fino a chi
+  decide, prescrive, paga o aspetta un farmaco.
 prompts:
   - "analizza il mercato farmaceutico italiano. sii onesto, non gentile."
   - "spiega perché i tetti di spesa si sforano ogni anno. in 300 parole, senza colpevoli."
   - "confronta i tempi di accesso ai farmaci in Italia, Francia e Spagna. cita solo fonti vere."
-  - "scrivi un libro sulla politica farmaceutica. io controllo i numeri."
+  - "spiega il payback a un assessore, a un farmacista e a un paziente. stessi numeri."
 ticker:
   - "I modelli producono numeri. Le decisioni, purtroppo, non si prendono da sole."
   - "Una risposta più veloce non è necessariamente una risposta più verificabile."

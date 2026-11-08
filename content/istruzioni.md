@@ -8,13 +8,15 @@ items: []
 
 **Cosa non è.** Ricerca sottoposta a revisione tra pari. Quella sta su riviste e sul sito di [HETA Lab](https://ddrug.unimi.it/research/health-economics-and-technology-assessment-heta-lab/). Qui ci sono idee: alcune reggono, altre verranno corrette, e la correzione sarà visibile.
 
+**Perché in pubblico.** La ricerca in economia sanitaria finisce quasi sempre su riviste che leggono in pochi, scritta in una lingua che usano in meno. Le decisioni sui farmaci invece coinvolgono molti attori: AIFA e Regioni, farmacisti ospedalieri, clinici, aziende, associazioni di pazienti, giornalisti. Se un dato serve a decidere, deve arrivare a chi decide in una forma comprensibile, senza perdere il metodo per strada. Questo sito prova a farlo, e lascia a chiunque la possibilità di controllare i numeri.
+
 **Il testo di riferimento.** Per ogni idea il testo di riferimento è quello pubblicato su LinkedIn, non le bozze. Dove il testo non è ancora stato importato la scheda lo dice e rimanda al post originale.
 
 **Le date.** La data del post è quella di pubblicazione su LinkedIn. La data dei dati è l'ultimo aggiornamento della fonte usata. Sono due cose diverse e la scheda le tiene separate.
 
 **L'intelligenza artificiale.** Uso modelli linguistici per estrarre, confrontare e riscrivere. Non per decidere cosa è vero. Il titolo del sito è un'ammissione, non un vanto.
 
-**Quanto è artificiale.** Ogni idea dichiara come è stata scritta, su quattro livelli: *a mano* (AI solo per verifiche e fonti); *riscritta* (bozza mia, AI per sintesi e titoli); *co-scritta* (struttura e dati miei, prosa generata e poi corretta); *generata su prompt* (l'AI ha scritto, io ho verificato i numeri e tagliato). Il libro, quando ci sarà, apparterrà all'ultima categoria. Questo sito, in gran parte, alla terza.
+**Quanto è artificiale.** Ogni idea dichiara come è stata scritta, su quattro livelli: *a mano* (AI solo per verifiche e fonti); *riscritta* (bozza mia, AI per sintesi e titoli); *co-scritta* (struttura e dati miei, prosa generata e poi corretta); *generata su prompt* (l'AI ha scritto, io ho verificato i numeri e tagliato). Questo sito, in gran parte, appartiene alla terza.
 
 **I dati.** Pubblico solo dati ricostruiti da fonti pubbliche e riutilizzabili. Ogni rilascio ha un dizionario delle variabili e la fonte primaria. Se trovi un errore, scrivimi: hai ragione tu finché non dimostro il contrario, e la correzione prende un numero di versione.
 

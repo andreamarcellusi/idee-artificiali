@@ -201,3 +201,5 @@ footer .tiny{font-family:var(--mono);font-size:12px}
 .tg{border:1px solid rgba(255,255,255,.14);padding:14px 16px;border-radius:4px}.tg h4{margin:0 0 6px;color:#fff;font-size:15px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .tg h4 span{color:#9aa6bd;font-weight:400;font-size:13px}.tg p{margin:6px 0;font-size:15px}.tg .tg-l{font-size:14px}
 .rete .sintesi{max-width:none}.rete .sintesi > p{max-width:72ch}
+
+.perche{margin:36px 0 0;padding:22px 26px;border-left:4px solid #E8772E;background:var(--paper-2);max-width:78ch}.perche p{margin:8px 0 0;font-size:19px;line-height:1.55;color:var(--ink)}

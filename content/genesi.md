@@ -7,6 +7,12 @@ tappe:
 - Il metodo
 - Il confronto
 - Lo strumento
+perche: >-
+  La ricerca in economia sanitaria finisce quasi sempre su riviste che leggono in pochi.
+  Le decisioni sui farmaci invece passano per molte mani: AIFA e Regioni, farmacisti ospedalieri,
+  clinici, aziende, associazioni di pazienti, giornalisti. Se un dato serve a decidere, deve arrivare
+  a tutti loro in una forma comprensibile, senza perdere il metodo per strada.
+  Questo sito è un esperimento in quella direzione.
 ---
 Mi piaceva mettere ordine. I post si accumulavano su LinkedIn, ciascuno con i suoi dati e i suoi grafici, e dopo qualche mese non li ritrovavo nemmeno io. Questo sito è prima di tutto un archivio, con il testo, il carosello e le fonti di ogni idea nello stesso posto.
 

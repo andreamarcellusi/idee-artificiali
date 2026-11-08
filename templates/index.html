@@ -20,6 +20,7 @@
     <li class="step"><div class="sn"><span>{{ '%02d' % loop.index }}</span></div><div class="sb"><div class="kicker">{{ genesi.tappe[loop.index0] }}</div><p>{{ par }}</p></div></li>
   {% endfor %}
   </ol>
+  {% if genesi.perche %}<blockquote class="perche"><div class="kicker">Perché in pubblico</div><p>{{ genesi.perche }}</p></blockquote>{% endif %}
 </div></section>
 
 
