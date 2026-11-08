@@ -151,7 +151,7 @@ footer .tiny{font-family:var(--mono);font-size:12px}
 .graph svg.focus .l-strong{opacity:.12} .graph svg.focus .l-strong.lit{opacity:1;stroke-width:3}
 .graph .node:hover .halo{opacity:.7}
 .legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--cream);opacity:.75}
-.legend .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px;box-shadow:0 0 8px currentColor}
+.legend .dot,.tg .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px;box-shadow:0 0 8px currentColor}
 .t-spesa{background:#5b78b8}.t-accesso{background:#E8772E}.t-oncologia{background:#b07fd0}.t-ai{background:#4fb59b}.t-formazione{background:#c9b26b}
 
 /* ultime idee */
@@ -194,3 +194,10 @@ footer .tiny{font-family:var(--mono);font-size:12px}
 .avv li{margin-bottom:8px}
 
 .ep{width:100%;margin:8px 0}
+
+.rete .sintesi{max-width:72ch;margin-top:22px;color:#cfd6e4;font-size:16px}.rete .sintesi a{color:#f3b27f}.rete .sintesi b{color:#fff}
+
+.temi-g{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:14px;margin:18px 0}
+.tg{border:1px solid rgba(255,255,255,.14);padding:14px 16px;border-radius:4px}.tg h4{margin:0 0 6px;color:#fff;font-size:15px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.tg h4 span{color:#9aa6bd;font-weight:400;font-size:13px}.tg p{margin:6px 0;font-size:15px}.tg .tg-l{font-size:14px}
+.rete .sintesi{max-width:none}.rete .sintesi > p{max-width:72ch}

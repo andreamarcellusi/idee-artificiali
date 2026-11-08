@@ -52,3 +52,20 @@ feedback:
   campo_idea: "2118001590"
 
 licenza_dati: CC BY 4.0
+
+# Novità del sito mostrate sotto la rete (le tre più recenti). Aggiungere in cima.
+novita:
+  - data: 2026-11-08
+    testo: "In I numeri i primi tre dataset: tetti di spesa 2008-2026, payback in Europa, valutazioni NICE"
+  - data: 2026-11-08
+    testo: "In Le voci l'episodio 0, su come nasce il sito"
+  - data: 2026-11-08
+    testo: "Aperta la preistoria: nove idee dal 2020 al 2024"
+
+# Una riga per tema, mostrata sotto la rete.
+temi_descrizioni:
+  accesso: "Quanto ci mette un farmaco innovativo ad arrivare al paziente, chi lo valuta e con quali regole: AIFA, il JCA europeo, l'early access, il NICE, le Regioni."
+  spesa: "Quanto spendiamo in farmaci, come si fissano i tetti, chi paga quando si sfora e come fanno gli altri paesi."
+  ai: "Esperimenti con l'intelligenza artificiale sulle valutazioni di AIFA e sulla ricerca: cosa riesce a riprodurre e dove sbaglia."
+  oncologia: "La spesa oncologica tra brevetti che scadono e terapie che arrivano: chi la assorbe e cosa compra."
+  formazione: "Corsi e momenti di confronto, quando contengono un'idea."

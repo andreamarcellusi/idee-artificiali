@@ -60,6 +60,7 @@ def main():
     base = site["base_url"].rstrip("/")
     site_url = site.get("site_url", "https://andreamarcellusi.github.io" + base)
     env = Environment(loader=FileSystemLoader(TEMPLATES), autoescape=select_autoescape(["html"]))
+    env.filters['minuscola'] = lambda x: x[:1].lower() + x[1:] if x[1:2].islower() else x
     env.globals.update(site=site, base=base, site_url=site_url, build_date=date_it(dt.date.today()))
 
     def carica(cartella, sezione, tipo, code):
@@ -115,6 +116,25 @@ def main():
                 if k not in seen:
                     seen.add(k); glinks.append({"source": k[0], "target": k[1], "strong": False})
     graph = {"nodes": nodes, "links": glinks}
+    # sintesi testuale della rete, ricalcolata a ogni build
+    deg = {p["slug"]: 0 for p in idee}
+    for l in glinks:
+        if l["strong"]:
+            deg[l["source"]] += 1; deg[l["target"]] += 1
+    conta = {k: sum(1 for p in idee if k in p["temi"]) for k in site["temi"]}
+    temi_ord = [(site["temi"][k], n) for k, n in sorted(conta.items(), key=lambda x: -x[1]) if n]
+    hub = sorted(idee, key=lambda p: (-deg[p["slug"]], str(p["date"])))[:2]
+    sintesi = {
+        "n": len(idee), "dal": date_it(min(str(p["date"]) for p in idee)), "al": date_it(max(str(p["date"]) for p in idee)),
+        "temi": temi_ord, "hub": [(p, deg[p["slug"]]) for p in hub if deg[p["slug"]]],
+        "ultime": idee[:2],
+        "per_tema": [dict(k=k, nome=site["temi"][k], n=conta[k], desc=(site.get("temi_descrizioni") or {}).get(k, ""),
+                          idee=sorted([p for p in idee if k in p["temi"]], key=lambda p: (-deg[p["slug"]], str(p["date"])))[:3])
+                     for k, _ in sorted(conta.items(), key=lambda x: -x[1]) if conta[k]], "isolate": sum(1 for v in deg.values() if v == 0),
+        "novita": sorted(site.get("novita") or [], key=lambda x: str(x["data"]), reverse=True)[:3],
+    }
+    for nv in sintesi["novita"]:
+        nv["data_it"] = date_it(nv["data"])
     tema_colors = site.get("tema_colors", {})
     for i, p in enumerate(idee):
         p["next"] = idee[i - 1] if i > 0 else None       # più recente
@@ -165,7 +185,7 @@ def main():
     n_car = sum(1 for p in idee if p.get("allegato") == "carosello")
     genesi = read_md(CONTENT / "genesi.md")
     genesi["paragrafi"] = [x.strip() for x in genesi["body_raw"].split("\n\n") if x.strip()]
-    (OUT / "index.html").write_text(env.get_template("index.html").render(idee=idee, genesi=genesi, n_caroselli=n_car, graph=graph, tema_colors=tema_colors, current="/"), encoding="utf-8")
+    (OUT / "index.html").write_text(env.get_template("index.html").render(idee=idee, genesi=genesi, n_caroselli=n_car, graph=graph, sintesi=sintesi, tema_colors=tema_colors, current="/"), encoding="utf-8")
     (OUT / "idee").mkdir(exist_ok=True)
     (OUT / "idee" / "index.html").write_text(env.get_template("idee.html").render(idee=idee, page_title="Le idee", current="/idee/"), encoding="utf-8")
 

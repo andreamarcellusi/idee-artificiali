@@ -27,6 +27,19 @@
   <div class="sec-h"><h2>La rete</h2><p>Come le idee si tengono insieme. Linee piene: un'idea riprende l'altra. Linee sottili: stesso tema. I numeri aprono le schede.</p></div>
   <div class="graph" id="graph"></div>
   <div class="legend">{% for k, v in site.temi.items() %}<span><i class="dot t-{{ k }}"></i>{{ v }}</span>{% endfor %}</div>
+  <div class="sintesi">
+    <p><b>Fin qui.</b> {{ sintesi.n }} idee dal {{ sintesi.dal }} al {{ sintesi.al }}.
+    Un'idea può stare in più temi, e i colori della rete seguono il tema principale.
+    {% if sintesi.hub %}L'idea più collegata è <a href="{{ base }}/idee/{{ sintesi.hub[0][0].slug }}/">{{ sintesi.hub[0][0].etichetta or sintesi.hub[0][0].title }}</a>, con {{ sintesi.hub[0][1] }} collegamenti diretti{% if sintesi.hub|length > 1 %}; poi <a href="{{ base }}/idee/{{ sintesi.hub[1][0].slug }}/">{{ sintesi.hub[1][0].etichetta or sintesi.hub[1][0].title }}</a> ({{ sintesi.hub[1][1] }}){% endif %}.{% endif %}
+    {% if sintesi.isolate %}{{ sintesi.isolate }} {{ 'idea non è ancora collegata' if sintesi.isolate == 1 else 'idee non sono ancora collegate' }} alle altre.{% endif %}</p>
+    <div class="temi-g">{% for g in sintesi.per_tema %}
+      <div class="tg"><h4><i class="dot t-{{ g.k }}"></i>{{ g.nome }} <span>{{ g.n }} {{ 'idea' if g.n == 1 else 'idee' }}</span></h4>
+        {% if g.desc %}<p>{{ g.desc }}</p>{% endif %}
+        <p class="tg-l">Da dove partire: {% for p in g.idee %}<a href="{{ base }}/idee/{{ p.slug }}/">{{ p.etichetta or p.title.split(':')[0] }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p></div>
+    {% endfor %}</div>
+    <p><b>Le ultime.</b> {% for p in sintesi.ultime %}<a href="{{ base }}/idee/{{ p.slug }}/">{{ p.title }}</a> ({{ p.date_it }}){% if not loop.last %}; {% endif %}{% endfor %}.
+    {% for nv in sintesi.novita %}{{ nv.testo }} ({{ nv.data_it }}).{% if not loop.last %} {% endif %}{% endfor %}</p>
+  </div>
 </div></section>
 
 <section class="paper ultime"><div class="wrap">
