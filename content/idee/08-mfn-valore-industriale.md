@@ -12,10 +12,15 @@ allegato_linkedin: carosello
 stato: da verificare
 scritto_da: co-scritta
 linkedin: https://it.linkedin.com/posts/andrea-marcellusi-5564642a_mfn-marketaccess-hta-activity-7483414408950575104-QHOv
-data_dati: da indicare
+data_dati: ultimi anni disponibili OCSE
 versione: '1.0'
 testo: importato
-fonti: []
+fonti:
+- titolo: ASPE (U.S. Department of Health and Human Services), report sulla spesa farmaceutica internazionale
+- titolo: 'OCSE, STAN: valore aggiunto dell''industria farmaceutica'
+  nota: stesso metodo del report ASPE
+- titolo: Elaborazione dell'autore
+  nota: prima esplorazione; metodo e limiti nel carosello
 collegata_a:
 - crescita-spesa-farmaceutica
 ---

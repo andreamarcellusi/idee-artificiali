@@ -10,10 +10,13 @@ immagine: nice-soglia.png
 stato: da verificare
 scritto_da: co-scritta
 linkedin: https://it.linkedin.com/posts/andrea-marcellusi-5564642a_hta-nice-farmacoeconomia-activity-7510586873657008128-ryUH
-data_dati: da indicare
+data_dati: aprile-settembre 2025 e 2026
 versione: '1.0'
 testo: importato
-fonti: []
+fonti:
+- titolo: NICE, Technology Appraisal pubblicate da aprile a settembre 2026 e nello stesso periodo del 2025
+  nota: dataset in I numeri
+- titolo: NICE, aggiornamento della soglia di costo-efficacia (aprile 2026)
 ---
 Nella settimana della Modelling Week, tra un modello di Markov e un'analisi di sensibilità, mi è venuta voglia di guardare cosa succede alle valutazioni economiche fuori dall'aula.
 

@@ -11,10 +11,20 @@ carosello: spesa-oncologica
 stato: da verificare
 scritto_da: co-scritta
 linkedin: https://it.linkedin.com/posts/andrea-marcellusi-5564642a_horizon-scanning-oncologia-activity-7502976780014690305-l7dr
-data_dati: da indicare
+data_dati: 2010-2025
 versione: '1.0'
 testo: importato
-fonti: []
+fonti:
+- titolo: AIOM-AIRTUM, I numeri del cancro 2017 e 2025
+- titolo: AIRTUM, Cancer Epidemiology 2026
+- titolo: Guzzinati et al., BMC Cancer 2018 ed ESMO Open 2024
+- titolo: AIFA, Rapporti OsMed 2017, 2024 e 2025
+- titolo: Egualia
+  nota: biosimilari
+- titolo: Bilanci Genmab e BMS
+  nota: scadenze brevettuali
+- titolo: Revolution Medicines, prezzo WAC di daraxonrasib, agosto 2026
+- titolo: FDA, approvazione di daraxonrasib, 26 agosto 2026
 collegata_a:
 - osmed-2025
 - innovativita-2007-2025

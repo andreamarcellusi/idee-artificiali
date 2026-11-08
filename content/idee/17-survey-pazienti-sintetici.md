@@ -10,10 +10,12 @@ stato: verificato
 scritto_da: a mano
 ricondivide: ISPOR Italy - Rome Chapter
 linkedin: https://it.linkedin.com/posts/andrea-marcellusi-5564642a_survey-ispor-activity-7509975799698083840-1vog
-data_dati: da indicare
+data_dati: settembre 2026
 versione: '1.0'
 testo: importato
-fonti: []
+fonti:
+- titolo: Survey ISPOR Italy Rome Chapter sui pazienti sintetici
+  nota: risultati al Congresso nazionale, 30 novembre-1 dicembre 2026
 ---
 Lo so, a molti il "sintetico" non piace. Pazienti che non esistono, dati che nessuno ha raccolto: un certo scetticismo è legittimo.
 

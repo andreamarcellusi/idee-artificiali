@@ -11,10 +11,11 @@ stato: verificato
 scritto_da: a mano
 modificato: true
 linkedin: https://it.linkedin.com/posts/andrea-marcellusi-5564642a_marketaccess-hta-farmacoeconomia-activity-7511785191267540992-XUJP
-data_dati: da indicare
+data_dati: ottobre 2026
 versione: '1.0'
 testo: importato
-fonti: []
+fonti:
+- titolo: Post di cronaca del corso, senza dati
 collegata_a:
 - modelling-week-primo-giorno
 ---

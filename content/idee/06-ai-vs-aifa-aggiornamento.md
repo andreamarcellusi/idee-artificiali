@@ -13,10 +13,13 @@ stato: da verificare
 scritto_da: riscritta
 modificato: true
 linkedin: https://it.linkedin.com/posts/andrea-marcellusi-5564642a_ai-vs-aifa-2-activity-7467999249201553408-AVgM
-data_dati: da indicare
+data_dati: dossier 2022-2025
 versione: '1.0'
 testo: importato
-fonti: []
+fonti:
+- titolo: AIFA, Determina 966/2025 del 10 luglio 2025
+- titolo: AIFA, 17 dossier di innovatività successivi alla riforma (calibrazione) e 127 valutazioni 2022-2025 (confronto)
+- titolo: Poster ai congressi GIRF (Verona, 4-5 giugno 2026) e AFI (Rimini, 10-12 giugno 2026)
 ---
 🤖 AI vs AIFA: update finale. E il verdetto è... 96%.
 

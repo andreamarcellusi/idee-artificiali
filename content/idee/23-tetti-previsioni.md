@@ -10,10 +10,22 @@ carosello: tetti-previsioni
 stato: da verificare
 scritto_da: co-scritta
 linkedin: https://it.linkedin.com/posts/andrea-marcellusi-5564642a_previsione-di-spesa-e-tetti-proposta-marcellusi-activity-7517834441990369280-IQjX
-data_dati: da indicare
+data_dati: consuntivi AIFA fino al 2025, documenti a ottobre 2026
 versione: '1.0'
 testo: importato
-fonti: []
+fonti:
+- titolo: AIFA, Monitoraggio della spesa farmaceutica nazionale e regionale, consuntivi 2017-2025
+- titolo: AIFA, procedimento di ripiano 2025
+- titolo: AIFA, Allegati B1 2019-2025 ed elenchi dei farmaci innovativi per singola indicazione
+- titolo: AIFA, Horizon Scanning 2021-2025
+- titolo: 'EMA, Human medicines highlights 2016-2025; PRIME: analysis of the first five years'
+- titolo: Corte dei conti, audizione sul DPFP 2026
+- titolo: MEF, Documento programmatico di bilancio 2027
+- titolo: L. 199/2025, comma 386
+- titolo: GOV.UK, VPAG 2026 (Regno Unito); LFSS 2025 (Francia)
+  nota: per il confronto con i sistemi esteri
+- titolo: Modello a blocchi HETA Lab, 18 ottobre 2026
+  nota: elaborazione dell'autore; limiti nella slide 8
 collegata_a:
 - ssn-163-miliardi
 - osmed-2025

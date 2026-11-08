@@ -10,10 +10,22 @@ immagine: spesa-farmaceutica-europa.png
 stato: da verificare
 scritto_da: co-scritta
 linkedin: https://it.linkedin.com/posts/andrea-marcellusi-5564642a_marketaccess-hta-farmacoeconomia-activity-7505513359547650049-W9me
-data_dati: da indicare
+data_dati: 2019-2024
 versione: '1.0'
 testo: importato
-fonti: []
+fonti:
+- titolo: AIFA, Rapporto OsMed
+  nota: Italia
+- titolo: DREES, comptes nationaux de la santé (financement)
+  nota: Francia
+- titolo: Ministerio de Hacienda, serie del gasto farmacéutico y sanitario 2014-2023
+  nota: Spagna
+- titolo: NHSBSA, Prescribing Costs in Hospitals and the Community 2023
+  nota: Inghilterra
+- titolo: 'Eurostat: HICP, parità di potere d''acquisto, popolazione'
+  nota: deflazione e confronto pro capite
+- titolo: Fonti nazionali di Germania e Portogallo
+  nota: da completare; le fonti di questa scheda sono ricostruite dai file di lavoro e vanno confermate
 collegata_a:
 - osmed-2025
 - crescita-spesa-farmaceutica

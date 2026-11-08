@@ -10,10 +10,11 @@ allegato_linkedin: immagine
 stato: verificato
 scritto_da: riscritta
 linkedin: https://it.linkedin.com/posts/andrea-marcellusi-5564642a_marketaccess-hta-farmacoeconomia-activity-7511301720031895552-5fLl
-data_dati: da indicare
+data_dati: settembre 2026
 versione: '1.0'
 testo: importato
-fonti: []
+fonti:
+- titolo: Post di cronaca del corso, senza dati
 ---
 Primo giorno di The Modelling Week archiviato. 🚀
 

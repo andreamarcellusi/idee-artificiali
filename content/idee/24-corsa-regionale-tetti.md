@@ -9,10 +9,13 @@ allegato: video
 stato: da verificare
 scritto_da: co-scritta
 linkedin: https://it.linkedin.com/posts/andrea-marcellusi-5564642a_marketaccess-hta-farmacoeconomia-activity-7520386418385387521-dGxM
-data_dati: da indicare
+data_dati: osservato gennaio-marzo 2026; resto del 2026 simulato
 versione: '1.0'
 testo: importato
-fonti: []
+fonti:
+- titolo: AIFA, Monitoraggio della spesa farmaceutica nazionale e regionale, gennaio-marzo 2026 e consuntivo 2025
+- titolo: Forward, speciale "Tetti di spesa farmaceutica e payback", contributo di Nello Martini
+  nota: sulla costruzione del primo tetto
 collegata_a:
 - tetti-previsioni
 ---

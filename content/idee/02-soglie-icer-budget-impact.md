@@ -9,10 +9,13 @@ allegato: nessuno
 stato: da verificare
 scritto_da: a mano
 linkedin: https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7400893139957309440
-data_dati: da indicare
+data_dati: novembre 2025
 versione: '1.0'
 testo: importato
-fonti: []
+fonti:
+- titolo: Paper su un framework di soglie di budget impact
+  nota: link nel post originale
+  url: https://lnkd.in/dasN4uGF
 collegata_a:
 - nice-soglia
 ---

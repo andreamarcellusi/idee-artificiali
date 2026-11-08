@@ -10,10 +10,13 @@ carosello: jca-factual-accuracy
 stato: da verificare
 scritto_da: riscritta
 linkedin: https://it.linkedin.com/posts/andrea-marcellusi-5564642a_carosello-marcellusi-jca-activity-7487756238093594626-ACW_
-data_dati: da indicare
+data_dati: primi tre JCA
 versione: '1.0'
 testo: importato
-fonti: []
+fonti:
+- titolo: Commissione europea, primi tre Joint Clinical Assessment e relativi Factual Accuracy Check
+  nota: 250 osservazioni, 257 decisioni
+- titolo: Analisi HETA Lab
 ---
 La cosa che mi ha incuriosito di più dei primi Joint Clinical Assessment europei non sono stati i PICO.
 

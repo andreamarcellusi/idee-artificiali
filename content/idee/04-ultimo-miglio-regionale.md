@@ -10,10 +10,14 @@ allegato_linkedin: carosello
 stato: da verificare
 scritto_da: a mano
 linkedin: https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7447682235756912641
-data_dati: da indicare
+data_dati: aprile 2026
 versione: '1.0'
 testo: importato
-fonti: []
+fonti:
+- titolo: Studio HETA Lab con IQVIA Italia sui tempi di prima movimentazione regionale
+  nota: tempistiche di prima movimentazione e loro determinanti
+- titolo: Progetto ORA (Osservatorio Regional Access) con PharmaValue
+  nota: presentazione del 23 giugno 2026
 collegata_a:
 - tempi-aifa
 - early-access

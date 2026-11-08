@@ -11,10 +11,16 @@ stato: verificato
 scritto_da: co-scritta
 modificato: true
 linkedin: https://it.linkedin.com/posts/andrea-marcellusi-5564642a_tempi-aifa-disfarm-marcellusi-2026-activity-7481240985667223552-Orzl
-data_dati: da indicare
+data_dati: aprile 2024-dicembre 2025
 versione: '1.0'
 testo: importato
-fonti: []
+fonti:
+- titolo: AIFA, report sulle tempistiche delle procedure di prezzo e rimborso 2018-2022 (pubblicato nel 2023)
+- titolo: AIFA, primo report post-riforma, aprile 2024-dicembre 2025 (pubblicato nel 2026)
+- titolo: Letteratura pubblicata sui tempi di P&R in Italia, 2014-2021
+  nota: validazione esterna
+- titolo: Simulazione Monte Carlo HETA Lab
+  nota: limiti dichiarati nel carosello
 collegata_a:
 - revisione-prontuario
 ---

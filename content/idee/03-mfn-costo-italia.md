@@ -2,7 +2,7 @@
 n: 3
 title: 'MFN: quanto costerebbe all''Italia'
 date: '2025-12-20'
-etichetta: "MFN, il conto per l'Italia"
+etichetta: MFN, il conto per l'Italia
 summary: 'Esercizio per assurdo: prezzi USA giù del 30% e Italia che vuole mantenere attrattività e accesso. Sulla spesa pubblica, fino a 1,8 miliardi l''anno nel 2030.'
 temi:
 - spesa
@@ -11,10 +11,15 @@ allegato: nessuno
 stato: da verificare
 scritto_da: riscritta
 linkedin: https://www.linkedin.com/feed/update/urn%3Ali%3Ashare%3A7408156188422344704
-data_dati: da indicare
+data_dati: scenario 2026-2030
 versione: '1.0'
 testo: importato
-fonti: []
+fonti:
+- titolo: 'Ipotesi dell''autore: MFN dal 2026, 85% della spesa su farmaci già in commercio, 15% su nuovi lanci'
+  nota: esercizio per assurdo
+- titolo: Approfondimento citato nel post
+  nota: link nel post originale
+  url: https://lnkd.in/eByzi2qV
 collegata_a:
 - mfn-valore-industriale
 - jca-mfn-accesso

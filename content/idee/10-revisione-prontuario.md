@@ -10,10 +10,13 @@ carosello: revisione-prontuario
 stato: verificato
 scritto_da: co-scritta
 linkedin: https://it.linkedin.com/posts/andrea-marcellusi-5564642a_metodi-revisione-del-prontuario-activity-7490293039635144704-YHeu
-data_dati: da indicare
+data_dati: estate 2026
 versione: '1.0'
 testo: importato
-fonti: []
+fonti:
+- titolo: AIFA, ordini del giorno della Commissione Scientifico-Economica (CSE)
+- titolo: Spesa per area terapeutica (ipertensione e scompenso, sclerosi multipla, oncologia)
+  nota: 'fonte dei valori non indicata nel post: da completare'
 collegata_a:
 - innovativita-2007-2025
 ---

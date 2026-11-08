@@ -10,10 +10,12 @@ allegato_linkedin: immagine
 stato: da verificare
 scritto_da: riscritta
 linkedin: https://it.linkedin.com/posts/andrea-marcellusi-5564642a_marketaccess-hta-economiasanitaria-activity-7457788506434609152-kuPk
-data_dati: da indicare
+data_dati: maggio 2026
 versione: '1.0'
 testo: importato
-fonti: []
+fonti:
+- titolo: Riflessione dell'autore, senza dati propri
+  nota: il post non cita fonti numeriche
 ---
 Ogni giorno leggo articoli che parlano di “esplosione della spesa farmaceutica”.
  E ogni giorno mi faccio la stessa domanda:

@@ -10,10 +10,19 @@ immagine: jca-mfn-accesso.png
 stato: da verificare
 scritto_da: co-scritta
 linkedin: https://it.linkedin.com/posts/andrea-marcellusi-5564642a_marketaccess-hta-farmacoeconomia-activity-7500111430436900864-iFE1
-data_dati: da indicare
+data_dati: 29-30 agosto 2026
 versione: '1.0'
 testo: importato
-fonti: []
+fonti:
+- titolo: Editoriale su Journal of Comparative Effectiveness Research, dati GlobalData
+  nota: lanci europei nei paesi soggetti a JCA
+- titolo: Documento della Commissione europea sulle agenzie di prezzo e rimborso
+  nota: non ancora pubblicato, ripreso da altre analisi
+- titolo: EMA, elenchi mensili delle domande per nuove sostanze attive
+- titolo: Commissione europea, tracker dei JCA
+- titolo: FDA, nuove molecole approvate dal 2023
+  nota: 206 molecole seguite
+- titolo: HTACG, lettere di intenti
 collegata_a:
 - jca-factual-accuracy
 - early-access

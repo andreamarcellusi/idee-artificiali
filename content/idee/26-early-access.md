@@ -10,10 +10,23 @@ carosello: early-access
 stato: verificato
 scritto_da: co-scritta
 linkedin: https://it.linkedin.com/posts/andrea-marcellusi-5564642a_early-access-italia-vs-spagna-activity-7523286190788354048-S3Nz
-data_dati: da indicare
+data_dati: decisioni fino a giugno 2025, seguite fino al 31 ottobre 2026
 versione: '1.0'
 testo: importato
-fonti: []
+fonti:
+- titolo: HAS, decisioni di accès précoce, agosto 2021-giugno 2025
+  nota: 219 decisioni, 145 farmaci-indicazioni
+- titolo: EFPIA, Patients W.A.I.T. Indicator
+- titolo: Commissione europea, decisioni di autorizzazione per indicazione
+- titolo: Journal officiel (JORF), iscrizioni al rimborso ordinario
+  nota: Francia
+- titolo: Gazzetta Ufficiale, determine AIFA di prezzo e rimborso
+  nota: Italia
+- titolo: AIFA, Determina 966/2025, allegati e aggiornamenti mensili dell'elenco degli innovativi
+- titolo: Ministerio de Sanidad, accordi della CIPM
+  nota: Spagna
+- titolo: NICE, technology appraisal guidance
+  nota: Inghilterra, data di finanziamento a 90 giorni
 collegata_a:
 - tempi-aifa
 - nice-soglia

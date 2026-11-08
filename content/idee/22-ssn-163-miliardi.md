@@ -10,10 +10,20 @@ carosello: ssn-163-miliardi
 stato: da verificare
 scritto_da: riscritta
 linkedin: https://it.linkedin.com/posts/andrea-marcellusi-5564642a_ssn-163-miliardi-chi-li-paga-activity-7515660129694941184-3ZuC
-data_dati: da indicare
+data_dati: 2014-2026
 versione: '1.0'
 testo: importato
-fonti: []
+fonti:
+- titolo: Legge di Bilancio 2026
+- titolo: CIPESS, riparti del Fondo sanitario nazionale 2022-2025
+- titolo: ISTAT, indice NIC e rinuncia a prestazioni sanitarie 2024
+- titolo: Osservatorio CPI (OCPI), stime sul gettito delle sigarette
+- titolo: Eurostat, gov_10a_exp (COFOG), 2014 e 2024
+  nota: DE, FR, ES 2024 provvisori
+- titolo: OCSE, Health Statistics 2025
+- titolo: Sistema Tessera Sanitaria, 2016-2024
+- titolo: 9° Rapporto sul Servizio Sanitario Nazionale, Bologna, 7 ottobre 2026
+  nota: riferimento bibliografico
 collegata_a:
 - spesa-farmaceutica-europa
 ---

@@ -10,10 +10,22 @@ carosello: clawback-europa
 stato: da verificare
 scritto_da: co-scritta
 linkedin: https://it.linkedin.com/posts/andrea-marcellusi-5564642a_clawback-in-eu-scenario-analysis-activity-7521474132530630656-19uR
-data_dati: da indicare
+data_dati: 2019-2025
 versione: '1.0'
 testo: importato
-fonti: []
+fonti:
+- titolo: AIFA, monitoraggi consuntivi della spesa farmaceutica 2019-2025 e procedimenti di ripiano
+  nota: Italia
+- titolo: DHSC, VPAG e schemi precedenti
+  nota: Regno Unito
+- titolo: CEPS, rapporti annuali
+  nota: Francia
+- titolo: IOBE-SFEE
+  nota: Grecia
+- titolo: EFPIA, mercato farmaceutico a prezzi ex-factory
+  nota: per le quote sulle vendite
+- titolo: Notizia di stampa sulla proposta del Ministero della Salute al MEF di un tetto al payback (1,644 miliardi)
+  nota: fonte giornalistica non indicata nel post
 collegata_a:
 - tetti-previsioni
 - corsa-regionale-tetti

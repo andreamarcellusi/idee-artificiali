@@ -11,10 +11,16 @@ carosello: innovativita-2007-2025
 stato: verificato
 scritto_da: co-scritta
 linkedin: https://it.linkedin.com/posts/andrea-marcellusi-5564642a_non-ho-resistito-stavo-chiudendo-le-activity-7492825889420918784-1MNP
-data_dati: da indicare
+data_dati: 23 schede AIFA
 versione: '1.0'
 testo: importato
-fonti: []
+fonti:
+- titolo: AIFA, nota del 7 agosto 2026 sull'innovatività terapeutica
+- titolo: AIFA, algoritmo per l'innovatività del 2007
+- titolo: AIFA, Determina 966/2025 e schede di valutazione dell'innovatività
+  nota: corpus finale di 23 schede
+- titolo: Elaborazione con agenti AI, ogni assegnazione tracciata a frase e pagina della scheda
+  nota: analisi esplorativa
 collegata_a:
 - ai-riproducibilita
 - ai-vs-aifa-aggiornamento

@@ -10,10 +10,13 @@ immagine: reti-malattie-rare.png
 stato: da verificare
 scritto_da: riscritta
 linkedin: https://it.linkedin.com/posts/andrea-marcellusi-5564642a_malattierare-farmaciorfani-marketaccess-activity-7513124045698023424-saUE
-data_dati: da indicare
+data_dati: atti regionali in vigore
 versione: '1.0'
 testo: importato
-fonti: []
+fonti:
+- titolo: 46 atti regionali di istituzione delle reti per le malattie rare
+  nota: lettura sistematica di Martina Managò
+- titolo: Progetto di dottorato su market access dei farmaci per le malattie rare, Università degli Studi di Milano
 ---
 🗺️ Quando con Martina Managò abbiamo impostato il suo dottorato sul market access dei farmaci per le malattie rare all'Università degli Studi di Milano, pensavamo di occuparci soprattutto di prezzi, rimborsabilità e tempi.
 Poi ci siamo resi conto che per queste malattie una parte importante dell'accesso si gioca dopo. Il farmaco viene prescritto e seguito nei centri individuati dalle Regioni, e ogni Regione organizza la propria rete in modo diverso.

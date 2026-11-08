@@ -10,10 +10,13 @@ immagine: ai-riproducibilita.png
 stato: da verificare
 scritto_da: riscritta
 linkedin: https://it.linkedin.com/posts/andrea-marcellusi-5564642a_hta-farmacoeconomia-healtheconomics-activity-7507680827615518720-Uy1-
-data_dati: da indicare
+data_dati: 2021-2026
 versione: '1.0'
 testo: importato
-fonti: []
+fonti:
+- titolo: Valutazioni economiche pubblicate dal 2021 su due riviste di settore
+  nota: riviste non indicate nel post
+- titolo: 'Analisi dell''autore: frequenza del lessico tipico dell''editing con LLM e ricalcolo dei QALY'
 collegata_a:
 - survey-pazienti-sintetici
 ---

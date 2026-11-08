@@ -12,10 +12,15 @@ allegato_linkedin: carosello
 stato: da verificare
 scritto_da: riscritta
 linkedin: https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7399485040486842369
-data_dati: da indicare
+data_dati: dossier di innovatività 2022-aprile 2025
 versione: '1.0'
 testo: importato
-fonti: []
+fonti:
+- titolo: AIFA, Determina 966/2025 sui criteri di innovatività
+- titolo: AIFA, schede e report di valutazione dell'innovatività 2022-2025 (CTS e CSE)
+  nota: oltre 120 dossier
+- titolo: Elaborazione HETA Lab con modello di AI istruito sulla Determina 966/2025
+  nota: esperimento, non valutazione ufficiale
 collegata_a:
 - ai-vs-aifa-aggiornamento
 - innovativita-2007-2025

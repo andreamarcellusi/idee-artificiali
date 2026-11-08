@@ -38,7 +38,7 @@
 
     <h2>Le fonti</h2>
     {% if p.fonti %}<ul class="fonti">{% for f in p.fonti %}<li>{% if f.url %}<a href="{{ f.url }}">{{ f.titolo }}</a>{% else %}{{ f.titolo }}{% endif %}{% if f.nota %} · {{ f.nota }}{% endif %}</li>{% endfor %}</ul>
-    {% else %}<p class="note">Fonti primarie in compilazione. Nel post originale sono citate in coda.</p>{% endif %}
+    {% elif p.sezione == 'preistoria' %}<p class="note">Le fonti sono quelle citate o linkate nel post originale.</p>{% else %}<p class="note">Fonti primarie in compilazione. Nel post originale sono citate in coda.</p>{% endif %}
    </article>
    <aside class="side">
     <div class="box"><h4>Scheda</h4><dl>
