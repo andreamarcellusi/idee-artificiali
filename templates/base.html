@@ -27,5 +27,6 @@
   <p>{{ site.footer }} La ricerca sottoposta a revisione sta altrove: <a href="{{ site.heta_lab }}">HETA Lab, Università degli Studi di Milano</a>.</p>
   <p class="tiny">Ultimo aggiornamento {{ build_date }} · <a href="{{ base }}/istruzioni/">Istruzioni per l'uso</a></p>
 </div></footer>
-</body>
+{% if site.goatcounter %}<script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+{% endif %}</body>
 </html>

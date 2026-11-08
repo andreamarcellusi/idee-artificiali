@@ -70,6 +70,8 @@ def main():
         shutil.rmtree(OUT)
     OUT.mkdir()
     (OUT / ".nojekyll").write_text("")
+    if site.get("site_url","").startswith("https://") and "github.io" not in site["site_url"]:
+        (OUT / "CNAME").write_text(site["site_url"].split("//")[1].strip("/") + "\n")
     shutil.copytree(ASSETS, OUT / "assets")
     shutil.copy(TEMPLATES / "style.css", OUT / "style.css")
     shutil.copy(TEMPLATES / "favicon.svg", OUT / "favicon.svg")

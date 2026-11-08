@@ -2,7 +2,7 @@
 
 Archivio dei post e dei caroselli LinkedIn di Andrea Marcellusi sul mercato farmaceutico italiano, con fonti, dati, ripensamenti e podcast.
 
-Sito: https://andreamarcellusi.github.io/idee-artificiali/
+Sito: https://ideeartificiali.it
 
 ## Come è fatto
 

@@ -34,7 +34,7 @@ Ora sul PC esiste la cartella `Documents\GitHub\idee-artificiali` con dentro sol
 1. Nel browser vai su https://github.com/andreamarcellusi/idee-artificiali/settings/pages
 2. In **Build and deployment → Source** lascia **Deploy from a branch**.
 3. In **Branch** scegli `main` e, nel menu accanto, **/docs** (non /root). Clicca **Save**.
-4. Dopo 1-3 minuti ricarica la pagina: compare "Your site is live at https://andreamarcellusi.github.io/idee-artificiali/". Aprilo.
+4. Dopo 1-3 minuti ricarica la pagina: compare "Your site is live at https://ideeartificiali.it". Aprilo.
 
 ## Da qui in poi: aggiornare il sito
 
