@@ -48,5 +48,5 @@ tema_colors:
 # url: link "viewform" del modulo; campo_idea: numero entry del campo "Idea" (dal link precompilato).
 # Finché url è vuoto, il pulsante non compare.
 feedback:
-  url: ""
-  campo_idea: ""
+  url: "https://docs.google.com/forms/d/e/1FAIpQLSfJyDQYlAlowU7xDMbhAZCWtVvK58QT8fv-gxpBAEF9PGiRUA/viewform"
+  campo_idea: "2118001590"
