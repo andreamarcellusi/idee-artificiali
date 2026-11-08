@@ -28,6 +28,9 @@
     {% elif p.allegato == 'video' %}
     <h2>Il video</h2>
     <p class="note">Il video è visibile sul post originale.</p>
+    {% elif p.allegato_linkedin %}
+    <h2>L'allegato</h2>
+    <p class="note">Su LinkedIn questa idea ha {{ 'un carosello' if p.allegato_linkedin == 'carosello' else "un'immagine" }}, che qui non è ancora archiviato. Nel frattempo si vede sul post originale.</p>
     {% else %}
     <h2>L'allegato</h2>
     <p class="note">Questa idea non aveva allegato.</p>

@@ -50,3 +50,15 @@ Il sito si aggiorna da solo in un paio di minuti. Non serve altro.
 - "Push" chiede di nuovo le credenziali: accedi con lo stesso account del browser.
 - Il sito mostra solo il README: nelle impostazioni Pages controlla di aver scelto **/docs** e non /root.
 - Il sito è online ma senza immagini: aspetta due minuti e ricarica con Ctrl+F5.
+
+## Campi delle schede (content/idee/NN-slug.md)
+
+- `allegato`: carosello | immagine | video | nessuno. Con `carosello` servono `assets/caroselli/<nome>.pdf` e le pagine `p-*.jpg`; con `immagine` serve `assets/immagini/<file>`.
+- `allegato_linkedin`: carosello | immagine. Da usare quando su LinkedIn c'è un allegato che qui non è ancora archiviato (la scheda lo dichiara).
+- `scritto_da`: a mano | riscritta | co-scritta | generata su prompt.
+- `ricondivide`: autore del post ricondiviso, se l'idea è un commento a un post altrui.
+- `modificato: true`: il post è stato modificato su LinkedIn dopo la pubblicazione; archiviata la versione attuale.
+- `etichetta`: nome breve del nodo nella rete, se il titolo non basta a distinguerlo.
+- `collegata_a`: elenco di slug delle idee riprese (linee piene nella rete).
+- `correzioni`: elenco di voci `{versione, data, testo, grazie}` per il registro delle correzioni.
+- `bozza: true`: la scheda esiste ma non viene pubblicata.

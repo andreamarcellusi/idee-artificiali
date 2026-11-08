@@ -68,6 +68,10 @@ def main():
         p["slug"] = re.sub(r"^\d+-", "", path.stem)
         p["date_it"] = date_it(p["date"])
         p["allegato_label"] = ALLEGATI.get(p.get("allegato", "nessuno"), p.get("allegato"))
+        if p.get("allegato", "nessuno") == "nessuno" and p.get("allegato_linkedin"):
+            p["allegato_label"] = f'{p["allegato_linkedin"]} su LinkedIn, qui non ancora'
+        if p.get("allegato") == "immagine" and not (ASSETS / "immagini" / p["immagine"]).exists():
+            raise SystemExit(f"{path}: immagine '{p['immagine']}' assente in assets/immagini/")
         if p.get("testo") != "da importare" and p["body_raw"]:
             p["testo"] = "importato"
             p["body_html"] = linkedin_html(p["body_raw"])
@@ -87,7 +91,7 @@ def main():
     def short(t, n=26):
         t = re.split(r"[:.]", t)[0]
         return t if len(t) <= n else t[:n].rsplit(" ", 1)[0] + "…"
-    nodes = [{"id": p["slug"], "n": f'{p["n"]:02d}', "title": p["title"], "label": short(p["title"]), "date": p["date_it"], "tema": p["temi"][0], "url": f'{base}/idee/{p["slug"]}/'} for p in idee]
+    nodes = [{"id": p["slug"], "n": f'{p["n"]:02d}', "title": p["title"], "label": p.get("etichetta") or short(p["title"]), "date": p["date_it"], "tema": p["temi"][0], "url": f'{base}/idee/{p["slug"]}/'} for p in idee]
     seen, glinks = set(), []
     for p in idee:
         for s in p.get("collegata_a") or []:
