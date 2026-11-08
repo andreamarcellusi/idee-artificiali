@@ -8,6 +8,7 @@
   color-scheme:light;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--ink);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.5}
 img{max-width:100%;height:auto}
@@ -25,8 +26,8 @@ a{color:var(--ink)}
 .top nav a.ext{border:1px solid rgba(255,255,255,.3);opacity:1}
 
 /* copertina */
-.cover{color:var(--cream);padding-block:64px 48px}
-.cover h1{font-family:var(--display);font-weight:700;font-size:clamp(44px,9vw,120px);line-height:.92;margin:0;letter-spacing:-.02em;text-wrap:balance;max-width:12ch}
+.cover{color:var(--cream);padding-block:52px 40px}
+.cover h1{font-family:var(--display);font-weight:700;font-size:clamp(40px,7.2vw,96px);line-height:.95;margin:0;letter-spacing:-.02em;text-wrap:balance;max-width:16ch}
 .cover h1 em{font-style:italic;font-weight:500;color:var(--orange)}
 .cover h1 s{text-decoration:none;position:relative;display:inline-block}
 .cover h1 s::after{content:"";position:absolute;left:-2%;right:-2%;top:52%;height:.08em;background:var(--orange);transform:rotate(-2deg)}
@@ -34,8 +35,8 @@ a{color:var(--ink)}
 .prompt .u{color:var(--cream);opacity:.6}
 .cur{display:inline-block;width:.6em;height:1.1em;background:var(--mono-fg);vertical-align:-.15em;margin-left:2px;animation:blink 1s steps(1) infinite}
 @keyframes blink{50%{opacity:0}}
-.lede{margin-top:30px;max-width:60ch;font-size:19px;color:var(--cream);opacity:.9}
-.counts{display:flex;gap:36px;flex-wrap:wrap;margin-top:34px;font-variant-numeric:tabular-nums}
+.lede{margin-top:24px;max-width:60ch;font-size:18px;color:var(--cream);opacity:.9}
+.counts{display:flex;gap:36px;flex-wrap:wrap;margin-top:28px;font-variant-numeric:tabular-nums}
 .counts b{display:block;font-family:var(--display);font-size:40px;line-height:1;color:var(--cream)}
 .counts span{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--cream);opacity:.65}
 .counts .zero b{color:var(--orange)}
@@ -118,7 +119,8 @@ footer .tiny{font-family:var(--mono);font-size:12px}
 /* da dove nasce */
 .genesi{border-bottom:1px solid var(--line)}
 .genesi .wrap{padding-block:34px 40px}
-.prose.cols{max-width:none;margin-top:14px;column-width:30ch;column-gap:40px}
+.prose.cols{max-width:92ch;margin-top:14px;column-count:2;column-gap:44px}
+@media(max-width:700px){.prose.cols{column-count:1}}
 .prose.cols p{break-inside:avoid;margin:0 0 1em}
 .prose.cols p:first-child::first-letter{font-family:var(--display);font-size:3.1em;float:left;line-height:.8;padding:6px 8px 0 0;color:var(--orange)}
 
@@ -151,3 +153,17 @@ footer .tiny{font-family:var(--mono);font-size:12px}
 .legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--cream);opacity:.75}
 .legend .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px;box-shadow:0 0 8px currentColor}
 .t-spesa{background:#5b78b8}.t-accesso{background:#E8772E}.t-oncologia{background:#b07fd0}.t-ai{background:#4fb59b}.t-formazione{background:#c9b26b}
+
+/* ultime idee */
+.latest{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:20px}
+.card{display:flex;flex-direction:column;background:var(--cream);border:1px solid var(--line);text-decoration:none;color:var(--fg);min-width:0;overflow:hidden;transition:transform .15s,box-shadow .15s}
+.card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(27,42,74,.12)}
+.card img{display:block;width:100%;aspect-ratio:1;object-fit:cover;object-position:top;border-bottom:1px solid var(--line)}
+.card .ph{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:56px;color:#fff;border-bottom:1px solid var(--line)}
+.card .cb{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px}
+.card .meta{display:flex;justify-content:space-between;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);flex-wrap:wrap}
+.card h3{font-family:var(--display);font-weight:700;font-size:20px;line-height:1.2;margin:0;color:var(--ink);text-wrap:balance}
+.card p{margin:0;font-size:15px;color:var(--muted)}
+.tiles .three{margin-top:0}
+.tiles .wrap{padding-block:28px 40px}
+.genesi{border-top:1px solid var(--line)}

@@ -13,11 +13,6 @@
 </div></section>
 <div class="ticker"><div>{% for t in site.ticker %}<span>{{ t }}</span><span>·</span>{% endfor %}</div></div>
 
-<section class="paper genesi"><div class="wrap">
-  <div class="sec-h"><h2>{{ genesi.title }}</h2></div>
-  <div class="prose cols">{{ genesi.body_html|safe }}</div>
-</div></section>
-
 <section class="paper cerca"><div class="wrap">
   <div class="sec-h"><h2>Cerca un'idea</h2><p>Una parola nel titolo, nel testo o nelle fonti. Oppure un tema.</p></div>
   <div class="searchbar">
@@ -28,7 +23,15 @@
     <button class="chip on" data-t="all" type="button">Tutte</button>
     {% for k, v in site.temi.items() %}<button class="chip" data-t="{{ k }}" type="button">{{ v }}</button>{% endfor %}
   </div>
-  <div class="reg compact" id="reg">
+  <div class="latest" id="latest">
+  {% for p in idee[:3] %}
+    <a class="card" href="{{ base }}/idee/{{ p.slug }}/">
+      {% if p.allegato == 'carosello' %}<img src="{{ base }}/assets/caroselli/{{ p.carosello }}/{{ p.pages[0] }}" alt="" loading="lazy">{% elif p.allegato == 'immagine' %}<img src="{{ base }}/assets/immagini/{{ p.immagine }}" alt="" loading="lazy">{% else %}<div class="ph t-{{ p.temi[0] }}">{{ '%02d' % p.n }}</div>{% endif %}
+      <div class="cb"><div class="meta"><span>{{ '%02d' % p.n }} · {{ p.date_it }}</span><span>{{ site.temi[p.temi[0]] }}</span></div><h3>{{ p.title }}</h3><p>{{ p.summary }}</p></div>
+    </a>
+  {% endfor %}
+  </div>
+  <div class="reg compact" id="reg" hidden>
   {% for p in idee %}
     <a class="row" href="{{ base }}/idee/{{ p.slug }}/" data-t="{{ p.temi|join(' ') }}" data-s="{{ p.search_text }}">
       <div class="n">{{ '%02d' % p.n }}</div>
@@ -38,7 +41,7 @@
   {% endfor %}
   </div>
   <p class="note" id="empty" hidden>Nessuna idea con queste parole. O non l'ho ancora avuta, o non l'ho ancora archiviata.</p>
-  <p class="more"><a class="btn sec" href="{{ base }}/idee/">Tutte le idee, in ordine cronologico</a></p>
+  <p class="more"><a class="btn sec" href="{{ base }}/idee/">Tutte le {{ idee|length }} idee, in ordine cronologico</a></p>
 </div></section>
 
 <section class="paper rete"><div class="wrap">
@@ -47,16 +50,29 @@
   <div class="legend">{% for k, v in site.temi.items() %}<span><i class="dot t-{{ k }}"></i>{{ v }}</span>{% endfor %}</div>
 </div></section>
 
+<section class="paper genesi"><div class="wrap">
+  <div class="sec-h"><h2>{{ genesi.title }}</h2></div>
+  <div class="prose cols">{{ genesi.body_html|safe }}</div>
+</div></section>
+
+<section class="paper tiles"><div class="wrap">
+  <div class="three">
+    <div><b>I ripensamenti</b><p>Le idee che meritano una seconda lettura, più lenta, con metodo, limiti e registro delle modifiche.</p><p><a class="btn sec" href="{{ base }}/ripensamenti/">Apri</a></p></div>
+    <div><b>I numeri</b><p>I dati dietro le idee, scaricabili: CSV, dizionario delle variabili, fonte primaria, DOI.</p><p><a class="btn sec" href="{{ base }}/numeri/">Apri</a></p></div>
+    <div><b>Le voci</b><p>Episodi audio generati dai ripensamenti, dichiarati come tali. Da ascoltare con cautela.</p><p><a class="btn sec" href="{{ base }}/voci/">Apri</a></p></div>
+  </div>
+</div></section>
+
 <script src="{{ base }}/assets/js/d3.min.js"></script>
 <script>
 /* ricerca + filtri */
 const chips=[...document.querySelectorAll('#filters .chip')],rows=[...document.querySelectorAll('#reg .row')];
-const q=document.getElementById('q'),hits=document.getElementById('hits'),empty=document.getElementById('empty');
+const q=document.getElementById('q'),hits=document.getElementById('hits'),empty=document.getElementById('empty'),reg=document.getElementById('reg'),latest=document.getElementById('latest');
 let tema='all';
 const norm=s=>s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
 function apply(){const words=norm(q.value).split(/\s+/).filter(Boolean).map(w=>w.length>=5?w.slice(0,-1):w);let n=0;
  rows.forEach(r=>{const okT=tema==='all'||r.dataset.t.split(' ').includes(tema);const hay=norm(r.dataset.s);const okQ=words.every(w=>hay.includes(w));r.hidden=!(okT&&okQ);if(!r.hidden)n++});
- hits.textContent=(words.length||tema!=='all')?`${n} ${n===1?'idea':'idee'}`:'';empty.hidden=n>0;}
+ const active=words.length>0||tema!=='all';reg.hidden=!active;latest.hidden=active;hits.textContent=active?`${n} ${n===1?'idea':'idee'}`:'';empty.hidden=!active||n>0;}
 chips.forEach(c=>c.addEventListener('click',()=>{chips.forEach(x=>x.classList.toggle('on',x===c));tema=c.dataset.t;apply()}));
 q.addEventListener('input',apply);
 /* prompt animato */
