@@ -1,5 +1,12 @@
 ---
 title: Da dove nasce
+sottotitolo: Cinque passaggi, nessuno dei quali previsto.
+tappe:
+- Il disordine
+- Il tempo
+- Il metodo
+- Il confronto
+- Lo strumento
 ---
 Mi piaceva mettere ordine. I post si accumulavano su LinkedIn, ciascuno con i suoi dati e i suoi grafici, e dopo qualche mese non li ritrovavo nemmeno io. Questo sito è prima di tutto un archivio, con il testo, il carosello e le fonti di ogni idea nello stesso posto.
 

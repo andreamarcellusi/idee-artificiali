@@ -167,3 +167,18 @@ footer .tiny{font-family:var(--mono);font-size:12px}
 .tiles .three{margin-top:0}
 .tiles .wrap{padding-block:28px 40px}
 .genesi{border-top:1px solid var(--line)}
+
+/* tappe */
+.steps{list-style:none;margin:28px 0 0;padding:0;position:relative;max-width:78ch}
+.steps::before{content:"";position:absolute;left:27px;top:8px;bottom:8px;width:2px;background:var(--line)}
+.step{display:grid;grid-template-columns:56px 1fr;gap:22px;align-items:start;padding:14px 0 26px;opacity:.28;transform:translateY(10px);transition:opacity .6s ease,transform .6s ease}
+.step.on{opacity:1;transform:none}
+.sn{position:relative;z-index:1}
+.sn span{display:flex;width:56px;height:56px;align-items:center;justify-content:center;border-radius:50%;background:var(--paper);border:2px solid var(--line);font-family:var(--display);font-weight:700;font-size:20px;color:var(--ink);transition:border-color .6s,background .6s,color .6s}
+.step.on .sn span{border-color:var(--orange);background:var(--ink);color:var(--cream)}
+.sb .kicker{margin-bottom:6px}
+.sb p{margin:0;font-size:18px;line-height:1.55;max-width:62ch}
+@media(max-width:620px){.steps::before{left:19px}.step{grid-template-columns:40px 1fr;gap:14px}.sn span{width:40px;height:40px;font-size:15px}.sb p{font-size:17px}}
+@media(prefers-reduced-motion:reduce){.step{opacity:1;transform:none;transition:none}}
+.ultime{border-top:1px solid var(--line)}
+.ultime .sec-h p a{color:var(--ink);font-size:15px}

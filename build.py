@@ -105,6 +105,7 @@ def main():
 
     n_car = sum(1 for p in idee if p.get("allegato") == "carosello")
     genesi = read_md(CONTENT / "genesi.md")
+    genesi["paragrafi"] = [x.strip() for x in genesi["body_raw"].split("\n\n") if x.strip()]
     (OUT / "index.html").write_text(env.get_template("index.html").render(idee=idee, genesi=genesi, n_caroselli=n_car, graph=graph, tema_colors=tema_colors, current="/"), encoding="utf-8")
     (OUT / "idee").mkdir(exist_ok=True)
     (OUT / "idee" / "index.html").write_text(env.get_template("idee.html").render(idee=idee, page_title="Le idee", current="/idee/"), encoding="utf-8")
