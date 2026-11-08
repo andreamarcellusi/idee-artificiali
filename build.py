@@ -61,7 +61,7 @@ def main():
     site_url = site.get("site_url", "https://andreamarcellusi.github.io" + base)
     env = Environment(loader=FileSystemLoader(TEMPLATES), autoescape=select_autoescape(["html"]))
     env.filters['minuscola'] = lambda x: x[:1].lower() + x[1:] if x[1:2].islower() else x
-    env.globals.update(site=site, base=base, site_url=site_url, build_date=date_it(dt.date.today()))
+    env.globals.update(site=site, base=base, site_url=site_url, build_date=date_it(dt.date.today()), build_ver=dt.datetime.now().strftime('%Y%m%d%H%M'))
 
     def carica(cartella, sezione, tipo, code):
       out = []

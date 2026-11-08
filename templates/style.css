@@ -203,3 +203,9 @@ footer .tiny{font-family:var(--mono);font-size:12px}
 .rete .sintesi{max-width:none}.rete .sintesi > p{max-width:72ch}
 
 .perche{margin:36px 0 0;padding:22px 26px;border-left:4px solid #E8772E;background:var(--paper-2);max-width:78ch}.perche p{margin:8px 0 0;font-size:19px;line-height:1.55;color:var(--ink)}
+
+.rete .sintesi{color:#e8ecf4;font-size:16.5px;line-height:1.6}
+.rete .sintesi a{color:#ffb37d;text-decoration-color:rgba(255,179,125,.5);text-underline-offset:3px}
+.rete .sintesi a:hover{color:#fff}
+.rete .tg{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.18)}
+.rete .tg p{color:#e8ecf4}
