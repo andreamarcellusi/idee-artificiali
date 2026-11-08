@@ -133,13 +133,21 @@ footer .tiny{font-family:var(--mono);font-size:12px}
 .reg.compact h3{font-size:clamp(18px,2vw,22px)}
 .more{margin:22px 0 0}
 /* rete */
-.graph{margin-top:18px;background:var(--cream);border:1px solid var(--line);min-height:360px}
+.rete{background:var(--ink-deep);color:var(--cream);border-top:1px solid rgba(255,255,255,.08)}
+.rete .sec-h h2{color:var(--cream)} .rete .sec-h p{color:var(--cream);opacity:.7}
+.graph{margin-top:18px;min-height:420px;border-radius:6px;background:radial-gradient(ellipse at 50% 40%,#22335a 0%,#121c33 60%,#0c1427 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
 .graph svg{display:block;width:100%;height:auto}
-.graph .l-weak{stroke:var(--line);stroke-width:1}
-.graph .l-strong{stroke:var(--orange);stroke-width:2.5}
-.graph .node circle{stroke:var(--cream);stroke-width:2;cursor:pointer}
-.graph .node text{font-family:var(--mono);font-size:11px;font-weight:600;fill:#fff;pointer-events:none}
-.graph .node:hover circle{stroke:var(--orange)}
-.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:10px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--muted)}
-.legend .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
-.t-spesa{background:#1B2A4A}.t-accesso{background:#E8772E}.t-oncologia{background:#7a4a8a}.t-ai{background:#2e7d6b}.t-formazione{background:#8a7a4a}
+.graph .l-weak{stroke:rgba(247,243,234,.13);stroke-width:1;transition:stroke .2s}
+.graph .l-strong{fill:none;stroke:var(--orange);stroke-width:2;stroke-linecap:round;opacity:.85;transition:opacity .2s}
+.graph .node{cursor:pointer}
+.graph .node .halo{opacity:.35}
+.graph .node .core{stroke:rgba(247,243,234,.85);stroke-width:1.5}
+.graph .node .num{font-family:var(--mono);font-size:11px;font-weight:600;fill:#fff;pointer-events:none}
+.graph .node .lab{font-family:var(--body);font-size:12px;fill:var(--cream);opacity:.78;pointer-events:none}
+.graph svg.focus .node{opacity:.18;transition:opacity .2s} .graph svg.focus .node.lit{opacity:1}
+.graph svg.focus .l-weak{stroke:rgba(247,243,234,.05)} .graph svg.focus .l-weak.lit{stroke:rgba(247,243,234,.45)}
+.graph svg.focus .l-strong{opacity:.12} .graph svg.focus .l-strong.lit{opacity:1;stroke-width:3}
+.graph .node:hover .halo{opacity:.7}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:12px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--cream);opacity:.75}
+.legend .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px;box-shadow:0 0 8px currentColor}
+.t-spesa{background:#5b78b8}.t-accesso{background:#E8772E}.t-oncologia{background:#b07fd0}.t-ai{background:#4fb59b}.t-formazione{background:#c9b26b}

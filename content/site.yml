@@ -38,8 +38,8 @@ footer: >-
   chiesto di essere citati. Sito personale, non istituzionale. Contenuti
   CC BY 4.0 salvo diversa indicazione.
 tema_colors:
-  spesa: "#1B2A4A"
+  spesa: "#5b78b8"
   accesso: "#E8772E"
-  oncologia: "#7a4a8a"
-  ai: "#2e7d6b"
-  formazione: "#8a7a4a"
+  oncologia: "#b07fd0"
+  ai: "#4fb59b"
+  formazione: "#c9b26b"

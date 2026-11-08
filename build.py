@@ -48,6 +48,8 @@ def main():
     idee = []
     for path in sorted((CONTENT / "idee").glob("*.md")):
         p = read_md(path)
+        if p.get("bozza"):
+            continue  # non pubblicata finché bozza: true
         p["slug"] = re.sub(r"^\d+-", "", path.stem)
         p["date_it"] = date_it(p["date"])
         p["allegato_label"] = ALLEGATI.get(p.get("allegato", "nessuno"), p.get("allegato"))
@@ -66,7 +68,10 @@ def main():
     idee.sort(key=lambda x: (str(x["date"]), x["n"]), reverse=True)
     # rete: nodi e collegamenti (espliciti = strong; stesso tema = weak)
     by_slug = {p["slug"]: p for p in idee}
-    nodes = [{"id": p["slug"], "n": f'{p["n"]:02d}', "title": p["title"], "tema": p["temi"][0], "url": f'{base}/idee/{p["slug"]}/'} for p in idee]
+    def short(t, n=26):
+        t = re.split(r"[:.]", t)[0]
+        return t if len(t) <= n else t[:n].rsplit(" ", 1)[0] + "…"
+    nodes = [{"id": p["slug"], "n": f'{p["n"]:02d}', "title": p["title"], "label": short(p["title"]), "date": p["date_it"], "tema": p["temi"][0], "url": f'{base}/idee/{p["slug"]}/'} for p in idee]
     seen, glinks = set(), []
     for p in idee:
         for s in p.get("collegata_a") or []:
