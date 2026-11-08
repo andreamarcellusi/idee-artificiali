@@ -1,14 +1,14 @@
 ---
 n: 6
 title: 'AI vs AIFA: concordanza al 96%'
-date: '2026-06-03'
 etichetta: AI vs AIFA, il 96%
+date: '2026-06-03'
 summary: Ricalibrata sui dossier post-riforma, l’AI concorda con AIFA in 122 valutazioni di innovatività su 127.
 temi:
 - ai
 - accesso
-allegato: nessuno
-allegato_linkedin: carosello
+allegato: carosello
+carosello: ai-vs-aifa-aggiornamento
 stato: da verificare
 scritto_da: riscritta
 modificato: true

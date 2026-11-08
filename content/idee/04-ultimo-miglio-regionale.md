@@ -5,8 +5,8 @@ date: '2026-04-08'
 summary: Con IQVIA, le tempistiche di prima movimentazione regionale e le loro determinanti. Il riconoscimento dell'innovatività taglia i tempi del 46%.
 temi:
 - accesso
-allegato: nessuno
-allegato_linkedin: carosello
+allegato: carosello
+carosello: ultimo-miglio-regionale
 stato: da verificare
 scritto_da: a mano
 linkedin: https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7447682235756912641

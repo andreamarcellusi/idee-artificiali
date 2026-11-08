@@ -1,14 +1,14 @@
 ---
 n: 1
 title: 'AI vs AIFA: e se la 966/2025 avesse valutato dal 2022?'
-date: '2025-11-26'
 etichetta: AI vs AIFA, il primo
+date: '2025-11-26'
 summary: 'Primo esperimento: l''AI istruita con la Determina 966/2025 rivaluta oltre 120 dossier di innovatività 2022-2025 e risulta più severa di AIFA.'
 temi:
 - ai
 - accesso
-allegato: nessuno
-allegato_linkedin: carosello
+allegato: carosello
+carosello: ai-vs-aifa-prima
 stato: da verificare
 scritto_da: riscritta
 linkedin: https://www.linkedin.com/feed/update/urn%3Ali%3AugcPost%3A7399485040486842369

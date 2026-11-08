@@ -5,8 +5,8 @@ date: '2026-05-06'
 summary: La crescita della spesa come traiettoria strutturale da governare, non come anomalia da imputare a qualcuno.
 temi:
 - spesa
-allegato: nessuno
-allegato_linkedin: immagine
+allegato: immagine
+immagine: crescita-spesa-farmaceutica.jpg
 stato: da verificare
 scritto_da: riscritta
 linkedin: https://it.linkedin.com/posts/andrea-marcellusi-5564642a_marketaccess-hta-economiasanitaria-activity-7457788506434609152-kuPk

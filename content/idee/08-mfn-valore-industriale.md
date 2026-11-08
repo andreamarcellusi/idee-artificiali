@@ -1,14 +1,14 @@
 ---
 n: 8
 title: 'MFN: quanto si spende e quanto si incassa'
-date: '2026-07-16'
 etichetta: MFN, spesa e incassi
+date: '2026-07-16'
 summary: Spesa in farmaci e valore aggiunto dell’industria rispetto alla taglia di ogni paese. L’Italia ne trattiene circa la metà.
 temi:
 - spesa
 - accesso
-allegato: nessuno
-allegato_linkedin: carosello
+allegato: carosello
+carosello: mfn-valore-industriale
 stato: da verificare
 scritto_da: co-scritta
 linkedin: https://it.linkedin.com/posts/andrea-marcellusi-5564642a_mfn-marketaccess-hta-activity-7483414408950575104-QHOv
