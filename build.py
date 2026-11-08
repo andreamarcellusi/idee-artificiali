@@ -5,6 +5,7 @@ Uso:  python build.py
 Non servono altre dipendenze oltre a: pyyaml, markdown, jinja2.
 """
 import datetime as dt
+import html
 import pathlib
 import re
 import shutil
@@ -32,6 +33,20 @@ def read_md(path):
     return fm
 
 
+URL_RE = re.compile(r"(https?://[^\s<]+[^\s<.,;:!?)\]])")
+
+
+def linkedin_html(text):
+    """Testo del post così com'è su LinkedIn: a capo conservati, link cliccabili, niente markdown."""
+    paras = [x for x in re.split(r"\n\s*\n", text.strip()) if x.strip()]
+    out = []
+    for par in paras:
+        lines = [html.escape(l.rstrip()) for l in par.split("\n")]
+        lines = [URL_RE.sub(r'<a href="\1" target="_blank" rel="noopener">\1</a>', l) for l in lines]
+        out.append("<p>" + "<br>".join(lines) + "</p>")
+    return "\n".join(out)
+
+
 def date_it(d):
     d = dt.date.fromisoformat(str(d))
     return f"{d.day:02d} {MESI[d.month - 1]} {d.year}"
@@ -55,6 +70,7 @@ def main():
         p["allegato_label"] = ALLEGATI.get(p.get("allegato", "nessuno"), p.get("allegato"))
         if p.get("testo") != "da importare" and p["body_raw"]:
             p["testo"] = "importato"
+            p["body_html"] = linkedin_html(p["body_raw"])
         if p.get("allegato") == "carosello":
             pages = sorted((ASSETS / "caroselli" / p["carosello"]).glob("p-*.jpg"))
             if not pages:

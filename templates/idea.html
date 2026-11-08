@@ -13,6 +13,7 @@
       <div class="post pending"><p>Il testo pubblicato è in arrivo dall'archivio LinkedIn. Nel frattempo c'è il post originale, che resta la versione di riferimento.</p><p><a class="btn" href="{{ p.linkedin }}" target="_blank" rel="noopener">Leggi su LinkedIn ↗</a></p></div>
     {% else %}
       <div class="post">{{ p.body_html|safe }}</div>
+      {% if p.modificato %}<p class="note">Il post è stato modificato su LinkedIn dopo la pubblicazione: qui c'è la versione attuale.</p>{% endif %}
     {% endif %}
 
     {% if p.allegato == 'carosello' %}
@@ -44,6 +45,7 @@
       <dt>Stato</dt><dd>{{ p.stato }}</dd>
       <dt>Versione</dt><dd>{{ p.versione }}</dd>
       <dt>Scritto da</dt><dd>{{ p.scritto_da or 'umano e AI, quota in stima' }}</dd>
+      {% if p.ricondivide %}<dt>Ricondivide</dt><dd>{{ p.ricondivide }}</dd>{% endif %}
     </dl></div>
     <div class="box"><h4>Collegamenti</h4>
       <p><a class="btn" href="{{ p.linkedin }}" target="_blank" rel="noopener">Apri su LinkedIn ↗</a></p>
