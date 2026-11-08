@@ -12,6 +12,10 @@
   </div>
 </div></section>
 <div class="ticker"><div>{% for t in site.ticker %}<span>{{ t }}</span><span>·</span>{% endfor %}</div></div>
+<section class="paper genesi"><div class="wrap">
+  <div class="sec-h"><h2>{{ genesi.title }}</h2></div>
+  <div class="prose cols">{{ genesi.body_html|safe }}</div>
+</div></section>
 <section class="paper"><div class="wrap">
   <div class="sec-h"><h2>Le idee</h2><p>In ordine cronologico inverso. Ogni voce apre la scheda con testo, carosello, fonti e dati.</p></div>
   <div class="filters" id="filters">

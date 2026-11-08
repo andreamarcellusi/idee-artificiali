@@ -77,7 +77,8 @@ def main():
     shutil.copy(TEMPLATES / "favicon.svg", OUT / "favicon.svg")
 
     n_car = sum(1 for p in idee if p.get("allegato") == "carosello")
-    (OUT / "index.html").write_text(env.get_template("index.html").render(idee=idee, n_caroselli=n_car, current="/"), encoding="utf-8")
+    genesi = read_md(CONTENT / "genesi.md")
+    (OUT / "index.html").write_text(env.get_template("index.html").render(idee=idee, genesi=genesi, n_caroselli=n_car, current="/"), encoding="utf-8")
 
     for p in idee:
         d = OUT / "idee" / p["slug"]

@@ -114,3 +114,10 @@ footer .wrap{padding-block:24px;display:grid;gap:8px}
 footer .big{font-family:var(--display);font-style:italic;font-size:22px;opacity:.95}
 footer p{margin:0;opacity:.7;max-width:70ch} footer a{color:var(--orange)}
 footer .tiny{font-family:var(--mono);font-size:12px}
+
+/* da dove nasce */
+.genesi{border-bottom:1px solid var(--line)}
+.genesi .wrap{padding-block:34px 40px}
+.prose.cols{max-width:none;margin-top:14px;column-width:30ch;column-gap:40px}
+.prose.cols p{break-inside:avoid;margin:0 0 1em}
+.prose.cols p:first-child::first-letter{font-family:var(--display);font-size:3.1em;float:left;line-height:.8;padding:6px 8px 0 0;color:var(--orange)}
