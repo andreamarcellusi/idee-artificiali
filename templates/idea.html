@@ -51,7 +51,7 @@
       {% if p.ricondivide %}<dt>Ricondivide</dt><dd>{{ p.ricondivide }}</dd>{% endif %}
     </dl></div>
     <div class="box"><h4>Collegamenti</h4>
-      <p><a class="btn" href="{{ p.linkedin }}" target="_blank" rel="noopener">Apri su LinkedIn ↗</a></p>
+      {% if p.linkedin and p.linkedin.startswith('http') %}<p><a class="btn" href="{{ p.linkedin }}" target="_blank" rel="noopener">Apri su LinkedIn ↗</a></p>{% else %}<p class="note">Link al post LinkedIn in arrivo.</p>{% endif %}
       {% if p.ripensamento %}<p><a class="btn sec" href="{{ base }}{{ p.ripensamento }}">Il ripensamento</a></p>{% else %}<p class="note">Ripensamento non ancora scritto.</p>{% endif %}
     </div>
     <div class="box"><h4>Hai un dato migliore?</h4>
