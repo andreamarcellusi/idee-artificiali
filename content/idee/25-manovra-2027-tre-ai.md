@@ -10,7 +10,7 @@ allegato: carosello
 carosello: manovra-2027-tre-ai
 stato: verificato
 scritto_da: co-scritta
-linkedin: DA_INSERIRE
+linkedin: https://www.linkedin.com/posts/andrea-marcellusi-5564642a_scenari-legge-di-bilancio-ai-ugcPost-7525143386719444993-IfF3/
 data_dati: 30 ott 2026 (A.C. 3174) · consuntivo AIFA 2025
 versione: '1.0'
 testo: importato
