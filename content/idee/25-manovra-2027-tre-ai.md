@@ -1,7 +1,7 @@
 ---
 n: 25
 title: 'Manovra 2027: tre cose sul farmaco, e tre AI che l''avrebbero scritta diversamente'
-date: 2026-11-10
+date: '2026-11-10'
 summary: 'La legge di bilancio alza il tetto, sconta il payback a chi investe e finanzia l''accesso precoce con il fondo innovativi. Stessi soldi a ChatGPT, Gemini e Claude: nessuno dei tre avrebbe fatto lo sconto.'
 temi:
 - spesa
