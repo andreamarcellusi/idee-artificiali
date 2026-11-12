@@ -14,6 +14,9 @@ items:
   - titolo: "R3 · La spesa farmaceutica italiana vista da fuori"
     testo: "Il confronto con i paesi europei, rifatto con perimetri omogenei e fonti complete."
     stato: in programma
+  - titolo: "R4 · AI contro AIFA: quanto vale davvero il 96%"
+    testo: "Ricalcola la concordanza tra AI e AIFA sui soli dossier che l'AI non ha visto in calibrazione, in cieco rispetto all'esito. Nasce da una segnalazione ricevuta su LinkedIn."
+    stato: in programma
 ---
 ## Che cosa è un ripensamento
 

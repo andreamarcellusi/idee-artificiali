@@ -60,5 +60,5 @@ Il sito si aggiorna da solo in un paio di minuti. Non serve altro.
 - `modificato: true`: il post è stato modificato su LinkedIn dopo la pubblicazione; archiviata la versione attuale.
 - `etichetta`: nome breve del nodo nella rete, se il titolo non basta a distinguerlo.
 - `collegata_a`: elenco di slug delle idee riprese (linee piene nella rete).
-- `correzioni`: elenco di voci `{versione, data, testo, grazie}` per il registro delle correzioni.
+- `correzioni`: elenco di voci `{versione, data, testo, grazie, coinvolte}` per il registro delle correzioni. `coinvolte` è la lista degli slug delle altre idee toccate dalla correzione, mostrata come "Riguarda anche".
 - `bozza: true`: la scheda esiste ma non viene pubblicata.

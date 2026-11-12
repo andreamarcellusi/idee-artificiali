@@ -14,7 +14,12 @@ scritto_da: riscritta
 modificato: true
 linkedin: https://it.linkedin.com/posts/andrea-marcellusi-5564642a_ai-vs-aifa-2-activity-7467999249201553408-AVgM
 data_dati: dossier 2022-2025
-versione: '1.0'
+versione: '1.1'
+correzioni:
+- versione: '1.1'
+  data: '2026-11-12'
+  testo: "Limite di metodo. La concordanza del 96% è calcolata su un insieme che comprende anche i dossier usati per calibrare l'AI, quindi una parte dell'accordo è costruita e non osservata. La misura corretta è la concordanza sui soli casi che l'AI non ha visto in calibrazione, valutati senza conoscere l'esito AIFA. Il dato verrà ricalcolato in un ripensamento."
+  grazie: un lettore su LinkedIn
 testo: importato
 fonti:
 - titolo: AIFA, Determina 966/2025 del 10 luglio 2025
