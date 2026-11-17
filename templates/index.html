@@ -2,6 +2,7 @@
 {% block body %}
 <section class="cover"><div class="wrap">
   <h1>Idee <s>poco</s> intelligenti<br>e <em>molto</em> artificiali</h1>
+  <p class="firma"><span class="u">&gt; </span>{{ site.firma }}</p>
   <div class="prompt"><span class="u">&gt; </span><span id="typed">{{ site.prompts[0] }}</span><span class="cur"></span></div>
   <p class="lede">{{ site.lede }}</p>
   <div class="counts">
@@ -21,6 +22,7 @@
   {% endfor %}
   </ol>
   {% if genesi.perche %}<blockquote class="perche"><div class="kicker">Perché in pubblico</div><p>{{ genesi.perche }}</p></blockquote>{% endif %}
+  {% if site.chi_firma %}<div class="chi-firma" id="chi-firma"><div class="kicker">Chi firma</div><p>{{ site.chi_firma }} <a href="{{ site.ricerca_seria }}" target="_blank" rel="noopener">La ricerca seria sta altrove ↗</a></p></div>{% endif %}
 </div></section>
 
 

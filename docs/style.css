@@ -216,3 +216,9 @@ footer .tiny{font-family:var(--mono);font-size:12px}
 .prose th{font-weight:600;color:var(--ink)}
 h3.sub{margin:40px 0 14px;font-size:20px}
 figure.single.video{max-width:min(65ch,540px)} figure.single video{display:block;width:100%;height:auto;border:1px solid var(--line);background:#0f1a30}
+.firma{margin:22px 0 0;font-family:var(--mono);font-size:clamp(13px,1.4vw,16px);color:var(--cream);letter-spacing:.02em}.firma .u{opacity:.6}
+.cover .firma+.prompt{margin-top:14px}
+.byline{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--cream);opacity:.6;text-decoration:none;margin-left:14px;white-space:nowrap}.byline:hover{opacity:1}
+@media(max-width:1100px){.byline{display:none}}
+.chi-firma{margin:20px 0 0;padding:18px 26px;border:1px dashed var(--line);max-width:78ch}.chi-firma p{margin:8px 0 0;font-size:17px;line-height:1.55;color:var(--ink)}
+.brand-g{display:flex;align-items:baseline;flex-wrap:wrap}
