@@ -27,7 +27,8 @@
     <figure class="single"><img src="{{ base }}/assets/immagini/{{ p.immagine }}" alt="{{ p.title }}, infografica" loading="lazy"></figure>
     {% elif p.allegato == 'video' %}
     <h2>Il video</h2>
-    <p class="note">Il video è visibile sul post originale.</p>
+    {% if p.video %}<figure class="single video"><video controls playsinline preload="metadata" poster="{{ base }}/assets/video/{{ p.video }}.jpg"><source src="{{ base }}/assets/video/{{ p.video }}.mp4" type="video/mp4">Il browser non riproduce il video: <a href="{{ base }}/assets/video/{{ p.video }}.mp4">scaricalo qui</a>.</video></figure>
+    <p class="note"><a class="btn sec" href="{{ base }}/assets/video/{{ p.video }}.mp4" download>Scarica il video</a></p>{% else %}<p class="note">Il video è visibile sul post originale.</p>{% endif %}
     {% elif p.allegato_linkedin %}
     <h2>L'allegato</h2>
     <p class="note">Su LinkedIn questa idea ha {{ 'un carosello' if p.allegato_linkedin == 'carosello' else "un'immagine" }}, che qui non è ancora archiviato. Nel frattempo si vede sul post originale.</p>

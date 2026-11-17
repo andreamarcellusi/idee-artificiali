@@ -215,3 +215,4 @@ footer .tiny{font-family:var(--mono);font-size:12px}
 .prose th,.prose td{border-bottom:1px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top}
 .prose th{font-weight:600;color:var(--ink)}
 h3.sub{margin:40px 0 14px;font-size:20px}
+figure.single.video{max-width:min(65ch,540px)} figure.single video{display:block;width:100%;height:auto;border:1px solid var(--line);background:#0f1a30}

@@ -56,6 +56,8 @@ licenza_dati: CC BY 4.0
 
 # Novità del sito mostrate sotto la rete (le tre più recenti). Aggiungere in cima.
 novita:
+  - data: 2026-11-17
+    testo: "Idea n. 26 sul Fondo innovativi 2026-2029, con il video del caso base: è il primo video archiviato qui, non più solo su LinkedIn"
   - data: 2026-11-08
     testo: "In I numeri i primi tre dataset: tetti di spesa 2008-2026, payback in Europa, valutazioni NICE"
   - data: 2026-11-08

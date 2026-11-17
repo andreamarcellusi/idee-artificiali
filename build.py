@@ -79,6 +79,9 @@ def main():
           if p.get("testo") != "da importare" and p["body_raw"]:
               p["testo"] = "importato"
               p["body_html"] = linkedin_html(p["body_raw"])
+          if p.get("allegato") == "video" and p.get("video"):
+              if not (ASSETS / "video" / f'{p["video"]}.mp4').exists():
+                  raise SystemExit(f"{path}: video '{p['video']}.mp4' assente in assets/video/")
           if p.get("allegato") == "carosello":
               pages = sorted((ASSETS / "caroselli" / p["carosello"]).glob("p-*.jpg"))
               if not pages:
@@ -199,6 +202,8 @@ def main():
             og = f"{site_url}/assets/caroselli/{p['carosello']}/{p['pages'][0]}"
         elif p.get("allegato") == "immagine":
             og = f"{site_url}/assets/immagini/{p['immagine']}"
+        elif p.get("allegato") == "video" and p.get("video"):
+            og = f"{site_url}/assets/video/{p['video']}.jpg"
         (d / "index.html").write_text(
             env.get_template("idea.html").render(p=p, page_title=p["title"], description=p["summary"], og_image=og, current=None),
             encoding="utf-8")

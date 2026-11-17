@@ -53,7 +53,7 @@ Il sito si aggiorna da solo in un paio di minuti. Non serve altro.
 
 ## Campi delle schede (content/idee/NN-slug.md)
 
-- `allegato`: carosello | immagine | video | nessuno. Con `carosello` servono `assets/caroselli/<nome>.pdf` e le pagine `p-*.jpg`; con `immagine` serve `assets/immagini/<file>`.
+- `allegato`: carosello | immagine | video | nessuno. Con `carosello` servono `assets/caroselli/<nome>.pdf` e le pagine `p-*.jpg`; con `immagine` serve `assets/immagini/<file>`; con `video` serve il campo `video: <nome>` e i file `assets/video/<nome>.mp4` e `<nome>.jpg` (copertina).
 - `allegato_linkedin`: carosello | immagine. Da usare quando su LinkedIn c'è un allegato che qui non è ancora archiviato (la scheda lo dichiara).
 - `scritto_da`: a mano | riscritta | co-scritta | generata su prompt.
 - `ricondivide`: autore del post ricondiviso, se l'idea è un commento a un post altrui.
