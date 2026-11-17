@@ -12,7 +12,7 @@ video: fondo-innovativi-caso-base
 stato: verificato
 scritto_da: co-scritta
 linkedin: ''
-data_dati: indicazioni entrate nel Fondo fino al 2026 · stime a prezzi 2025, al lordo di sconti e payback
+data_dati: indicazioni entrate nel Fondo fino al 2026 · stime a prezzi 2025, al lordo di sconti e payback · stanziato 1.060 mln l'anno, cioè il Fondo (1.160 mln) senza la quota per gli antibiotici, esclusi dall'analisi
 versione: '1.0'
 testo: importato
 fonti:
